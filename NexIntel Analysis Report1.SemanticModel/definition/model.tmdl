@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Calculated tables & Parameters","Calculations","Conditional Formatting","Connections","Global & Page Filters","Joins","Overview","Pages","Queries","Tables","Visualization Filters"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Calculated tables & Parameters'
+ref table Calculations
+ref table 'Conditional Formatting'
+ref table Connections
+ref table 'Global & Page Filters'
+ref table Joins
+ref table Overview
+ref table Pages
+ref table Queries
+ref table Tables
+ref table 'Visualization Filters'
+ref table 'Thresholds for Unused Columns'
+
+ref cultureInfo en-US
+

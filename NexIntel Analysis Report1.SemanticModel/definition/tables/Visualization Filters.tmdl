@@ -1,0 +1,91 @@
+table 'Visualization Filters'
+	lineageTag: a910d1a2-72d6-49ed-95c1-b769682877c1
+
+	measure 'Distinct Tables' = ```
+			DISTINCTCOUNT('Visualization Filters'[table used])
+			
+			```
+		formatString: 0
+		lineageTag: d4f663e5-7c4d-4f99-82d5-d4f71c7b75d3
+
+	measure 'Total Visualizations' = COUNTROWS('Visualization Filters')
+		formatString: 0
+		lineageTag: eaf6b2ca-84f3-4595-8221-1efc9538c8d9
+
+	measure TotalPages = DISTINCTCOUNT('Visualization Filters'[Page Name])
+		formatString: 0
+		lineageTag: 89f471fd-7a15-4fe8-ad5c-852dc1efb7df
+
+	column ReportName
+		dataType: string
+		lineageTag: 8fb972df-a7db-4533-97a5-72dd196662a3
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 4bedf7fc-2578-40ac-b2a4-e8612525babe
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: fc4a2504-fc9c-4b22-8402-5942d85a5397
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Page Name'
+		dataType: string
+		lineageTag: 348babff-4759-4fc4-9e3e-66d187fdaebc
+		summarizeBy: none
+		sourceColumn: Page Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visualization Type'
+		dataType: string
+		lineageTag: 40e58f71-ad64-48a6-9955-777fd49430e7
+		summarizeBy: none
+		sourceColumn: Visualization Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'table used'
+		dataType: string
+		lineageTag: 68dd72a4-8268-4577-9dab-176926d55ec1
+		summarizeBy: none
+		sourceColumn: table used
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'column and value used'
+		dataType: string
+		lineageTag: 2d7d8ae5-f14e-474a-9beb-3f970db91d32
+		summarizeBy: none
+		sourceColumn: column and value used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Visualization Filters' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    #"Visualization Filters_Sheet" = Source{[Item="Visualization Filters",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Visualization Filters_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Page Name", type text}, {"Visualization Type", type text}, {"table used", type text}, {"column and value used", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

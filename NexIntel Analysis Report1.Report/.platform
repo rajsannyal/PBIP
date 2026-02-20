@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "NexIntel Analysis Report1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "240ecade-1cc0-4020-939d-3df2c4bbd095"
+  }
+}

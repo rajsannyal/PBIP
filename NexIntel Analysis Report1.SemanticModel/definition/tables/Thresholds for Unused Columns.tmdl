@@ -1,0 +1,53 @@
+table 'Thresholds for Unused Columns'
+	lineageTag: 4f9f1cb8-a87a-4661-aeb3-5c8455eefa14
+
+	column '% of Unused Columns'
+		lineageTag: cbed4e14-5228-47d0-96b5-202dfeebdcf1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [% of Unused Columns]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Impact Level'
+		lineageTag: 57f458b6-b5ad-4b1f-a734-cc571bd06761
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Impact Level]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Suggested Action'
+		lineageTag: 1d9cf4c1-6deb-49a2-b9cc-d67772a50c0b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Suggested Action]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estimated Benefit'
+		lineageTag: ae49a671-4b6b-4b76-9756-5c939b1a858a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Estimated Benefit]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Thresholds for Unused Columns' = calculated
+		mode: import
+		source =
+				
+				DATATABLE (
+				    "% of Unused Columns", STRING,
+				    "Impact Level",        STRING,
+				    "Suggested Action",    STRING,
+				    "Estimated Benefit",   STRING,
+				    {
+				        { "< 30%",  "Low",      "Optional pruning",       "~10–20% reduction in model size and refresh time" },
+				        { "30–60%", "Moderate", "Recommended",            "~20–40% improvement in performance" },
+				        { "> 60%",  "High",     "Strongly recommended",   "~40–70% reduction in model size, refresh time, and query latency" }
+				    }
+				)
+
+	annotation PBI_Id = 057d0b91d94f483aafa6dc7c8d9eabbc
+

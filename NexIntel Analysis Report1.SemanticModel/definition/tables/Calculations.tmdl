@@ -1,0 +1,154 @@
+table Calculations
+	lineageTag: 0b5846db-28c5-4b47-a11e-47764851f49e
+
+	measure 'Total Measures' = CALCULATE(COUNTROWS('Calculations'), 'Calculations'[Calculation Type] = "Measure")
+		formatString: 0
+		lineageTag: e1d44022-166e-48b0-9b2f-b41297c50a40
+
+	measure 'Total Calculations' = ```
+			COUNTROWS('Calculations')
+			
+			```
+		formatString: 0
+		lineageTag: c3a620df-c9ab-4217-b22d-7084168e16f2
+
+	measure 'Used Calculations' = CALCULATE(COUNTROWS('Calculations'), 'Calculations'[Used / Not Used] = "Used")
+		formatString: 0
+		lineageTag: bfaed780-b292-4ffc-93f5-211f25d32f41
+
+	measure 'UnUsed Calculations' = CALCULATE(COUNTROWS('Calculations'), 'Calculations'[Used / Not Used] = "Not Used")
+		formatString: 0
+		lineageTag: 93e3afa1-2e13-4345-8ff5-f31cf3be379b
+
+	measure Percent_Unused = DIVIDE('Calculations'[Unused Calculations], 'Calculations'[Total Calculations], 0)
+		lineageTag: faa1c2bb-8743-4d53-b1f5-6125ec050919
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Percent_Used = DIVIDE('Calculations'[Used Calculations], 'Calculations'[Total Calculations], 0)
+		lineageTag: f44a18d2-8a9c-4a39-818c-50eaca7c1c2e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Impact_Level = ```
+			
+			SWITCH(
+			    TRUE(),
+			    [Percent_Unused] < 0.30, "Low",
+			     [Percent_Unused]  >= 0.30 &&  [Percent_Unused]  <=0.60, "Moderate",
+			     [Percent_Unused]  >= 0.60, "High",
+			    "Unknown"
+			)
+			
+			```
+		lineageTag: 23052ce5-1875-4066-b76a-2978296243c4
+
+	measure Estimated_Benefit =
+			
+			SWITCH(
+			    TRUE(),
+			    [Percent_Unused] < 0.30, "~10–20% reduction in model size and refresh time",
+			    [Percent_Unused] >= 0.30 && [Percent_Unused] <= 0.60, "~20–40% improvement in performance",
+			    [Percent_Unused] > 0.60, "~40–70% reduction in model size, refresh time, and query latency",
+			    "Unknown"
+			)
+		lineageTag: df1254fb-cf6d-460c-8b56-0ade8aa34c85
+
+	measure Suggested_Action = ```
+			
+			SWITCH(
+			    TRUE(),
+			    [Percent_Unused] < 0.30, "Optional pruning",
+			    [Percent_Unused] >= 0.30 && [Percent_Unused] <= 0.60, "Recommended",
+			    [Percent_Unused] > 0.60, "Strongly recommended",
+			    "Unknown"
+			)
+			
+			```
+		lineageTag: 50770970-02c3-4463-8dd3-3e1076478423
+
+	measure Total_Columns = CALCULATE(COUNTROWS('Calculations'), 'Calculations'[Calculation Type] = "Column")
+		formatString: 0
+		lineageTag: 7a8d4aa0-e9c4-487d-beb5-d352245fc525
+
+	column ReportName
+		dataType: string
+		lineageTag: ff5cb5d9-92f6-4b3e-bb45-c139dd73f3b5
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 28d59636-e515-430d-b77e-b51c26cb7bf6
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: f6b90964-800e-4a0a-82c0-89dcaf5503d2
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Query Name'
+		dataType: string
+		lineageTag: 872c7bf9-820d-4158-a4b9-0613b14445b3
+		summarizeBy: none
+		sourceColumn: Query Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calculation type'
+		dataType: string
+		lineageTag: 94e773a3-83c2-4318-bf78-bce0c300cea7
+		summarizeBy: none
+		sourceColumn: Calculation type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calculation Name'
+		dataType: string
+		lineageTag: 5806f4c4-4795-4798-a087-059b30dfa2ec
+		summarizeBy: none
+		sourceColumn: Calculation Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calculation expression'
+		dataType: string
+		lineageTag: 184484a8-e95f-4ce1-a6c6-3cef3df6d5b9
+		summarizeBy: none
+		sourceColumn: Calculation expression
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Used / Not Used'
+		dataType: string
+		lineageTag: 6885869f-0d2b-44f3-82a7-d7f7fea66c32
+		summarizeBy: none
+		sourceColumn: Used / Not Used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calculations = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Calculations_Sheet = Source{[Item="Calculations",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Calculations_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Query Name", type text}, {"Calculation type", type text}, {"Calculation Name", type text}, {"Calculation expression", type text}, {"Used / Not Used", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

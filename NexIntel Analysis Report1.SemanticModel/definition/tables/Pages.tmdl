@@ -1,0 +1,127 @@
+table Pages
+	lineageTag: 0c8621ff-646d-4f9d-bcfd-94358e9e9018
+
+	measure 'Total Pages' = DISTINCTCOUNT('Pages'[Report_pageName])
+		formatString: 0
+		lineageTag: e5c13a8b-bd33-412b-a9bc-05f33f2cb9f3
+
+	measure Distinct_Tables = DISTINCTCOUNT('Pages'[Used_Columns/Measures])
+		formatString: 0
+		lineageTag: 4f5180d2-687e-4121-952b-91a12bbbd694
+
+	measure 'Most Used Visual' =
+			
+			VAR TopVisual =
+			    TOPN(
+			        1,
+			        SUMMARIZE(
+			            'Pages',
+			            'Pages'[Visuals],
+			            "VisualCount", COUNT('Pages'[Visuals])
+			        ),
+			        [VisualCount], DESC
+			    )
+			RETURN
+			MAXX(TopVisual, 'Pages'[Visuals])
+		lineageTag: 3c30229b-eaf2-4583-ac29-b81c6bbbbdec
+
+	measure 'Total Reports' = DISTINCTCOUNT('Pages'[reportName])
+		formatString: 0
+		lineageTag: b0ac5e5e-935f-4fbe-a253-ce41570311cc
+
+	measure 'Total Visuals' = COUNTROWS('Pages')
+		formatString: 0
+		lineageTag: a57f2cde-fdfd-4f89-8c8a-98866043e982
+
+	measure Total_Measures = COUNT('Pages'[measure_expressions])
+		formatString: 0
+		lineageTag: d55ee956-567a-4e91-8a9f-fc789a7748fe
+
+	column reportName
+		dataType: string
+		lineageTag: 7cb61756-7c0d-4680-b629-c57ec33e6a6e
+		summarizeBy: none
+		sourceColumn: reportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 346d5a57-c2ff-414c-aa59-03a485cf99b3
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Report_pageName
+		dataType: string
+		lineageTag: 762894eb-d862-4192-b0ae-097fa7be6e66
+		summarizeBy: none
+		sourceColumn: Report_pageName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Visuals
+		dataType: string
+		lineageTag: a6f98364-094a-4d54-8b54-801dbd8f2f05
+		summarizeBy: none
+		sourceColumn: Visuals
+
+		annotation SummarizationSetBy = Automatic
+
+	column Used_Columns/Measures
+		dataType: string
+		lineageTag: 9b8703d0-856e-4644-a518-0457baca33c7
+		summarizeBy: none
+		sourceColumn: Used_Columns/Measures
+
+		annotation SummarizationSetBy = Automatic
+
+	column calculated_column
+		dataType: string
+		lineageTag: 7ca8f841-f00e-4575-be16-304e1628df10
+		summarizeBy: none
+		sourceColumn: calculated_column
+
+		annotation SummarizationSetBy = Automatic
+
+	column measure_expressions
+		dataType: string
+		lineageTag: 0e6fdb61-a163-4a0c-aaea-8075b4c53a6f
+		summarizeBy: none
+		sourceColumn: measure_expressions
+
+		annotation SummarizationSetBy = Automatic
+
+	column column_used_in_measure_expression
+		dataType: string
+		lineageTag: 47697186-1d6e-49fc-aee4-724d96b454d1
+		summarizeBy: none
+		sourceColumn: column_used_in_measure_expression
+
+		annotation SummarizationSetBy = Automatic
+
+	column measure_used_in_measures_expression
+		dataType: string
+		lineageTag: 8233bb3e-2aaa-449b-9423-f09c240f83f1
+		summarizeBy: none
+		sourceColumn: measure_used_in_measures_expression
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pages = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Pages_Sheet = Source{[Item="Pages",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Pages_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"reportName", type text}, {"SheetName", type text}, {"Report_pageName", type text}, {"Visuals", type text}, {"Used_Columns/Measures", type text}, {"calculated_column", type text}, {"measure_expressions", type text}, {"column_used_in_measure_expression", type text}, {"measure_used_in_measures_expression", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

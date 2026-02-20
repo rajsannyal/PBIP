@@ -1,0 +1,192 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 258.916952521373,
+            "y": 226.4886691300303
+          },
+          "nodeIndex": "Calculated tables & Parameters",
+          "nodeLineageTag": "920e9e02-83d4-420f-b759-55c9278443fa",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 559.40496901388019,
+            "y": 888.27404325128521
+          },
+          "nodeIndex": "Calculations",
+          "nodeLineageTag": "9365d51c-fe04-42d4-8189-8d91dc37d4a2",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 838.41915151532271,
+            "y": -28.923585437923293
+          },
+          "nodeIndex": "Conditional Formatting",
+          "nodeLineageTag": "5922fd14-1427-4898-bf88-0d030d11ae62",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 551.66990525800009,
+            "y": -50
+          },
+          "nodeIndex": "Connections",
+          "nodeLineageTag": "aeefb751-46fe-4dc5-bca0-7b7fab50867e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 965.30138983718132,
+            "y": 274.716744452067
+          },
+          "nodeIndex": "Global & Page Filters",
+          "nodeLineageTag": "e5948048-24e1-4d92-8b9a-442dfefa999e",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 851.9319224649671,
+            "y": 886.79916367520116
+          },
+          "nodeIndex": "Joins",
+          "nodeLineageTag": "d05de14b-8433-421e-9f36-7223dc3890ed",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 574.66037680991349,
+            "y": 527.13400484940553
+          },
+          "nodeIndex": "Overview",
+          "nodeLineageTag": "cfffca73-7771-4a2d-a8dc-755b645d1708",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 532.0746874027443
+          },
+          "nodeIndex": "Pages",
+          "nodeLineageTag": "5853b150-86b4-4541-bdb7-752ae4eb93cb",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1554.9137083439316,
+            "y": 78.176829883473317
+          },
+          "nodeIndex": "Queries",
+          "nodeLineageTag": "a1b60412-b908-40d1-b253-bc248ae66474",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 257.84512405394679,
+            "y": 888.37233634650408
+          },
+          "nodeIndex": "Tables",
+          "nodeLineageTag": "4af1d1d8-c884-42be-a889-dc362f21f129",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1016.9094036643913,
+            "y": 579.9725289912044
+          },
+          "nodeIndex": "Visualization Filters",
+          "nodeLineageTag": "88457f05-6b46-4cc7-a2ab-e5f4c5c02e9d",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1512.3641986257649,
+            "y": 589.83845263748674
+          },
+          "nodeIndex": "Thresholds for Unused Columns",
+          "nodeLineageTag": "4f9f1cb8-a87a-4661-aeb3-5c8455eefa14",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 34.77127349869108,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [],
+      "name": "Layout 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,164 @@
+table Overview
+	lineageTag: e7f313b5-6df8-465f-880a-de7fcf02aae1
+
+	measure 'Filters Count' = SUM(Overview[Total Filters])
+		formatString: 0
+		lineageTag: 75a24f07-83b0-4fa6-9173-0789a87d5f54
+
+	measure Measure = "https://app.powerbi.com/groups/531ee1aa-b85c-4ea3-b1e0-46bb636c00db/reports/e155bc73-9886-4078-b56e-d10a713a739c/15912e77098619844530?experience=power-bi"
+		lineageTag: c38334ec-bf9c-415f-a215-1ad372bc8cfc
+
+	measure 'Visualizations Count' = ```
+			SUM(Overview[Number of visualization])
+			
+			```
+		formatString: 0
+		lineageTag: b2ed563f-7dd9-4680-add8-a8590404aa78
+
+	column ReportName
+		dataType: string
+		lineageTag: 7c6c3d11-d695-4d29-9f12-c974e251ad42
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 5c36d439-c52e-413b-8479-bda6c490c876
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Path'
+		dataType: string
+		lineageTag: 96241771-9c63-485f-bdca-1d9743615dca
+		summarizeBy: none
+		sourceColumn: Report Path
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bookmarks
+		dataType: int64
+		formatString: 0
+		lineageTag: 044d7973-7547-4bc5-abca-bf7d292938ef
+		summarizeBy: sum
+		sourceColumn: Bookmarks
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total queries'
+		dataType: int64
+		formatString: 0
+		lineageTag: 84d0667c-442c-461d-a8f5-6e557d040352
+		summarizeBy: sum
+		sourceColumn: Total queries
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of calculated columns'
+		dataType: int64
+		formatString: 0
+		lineageTag: 701900cc-3769-4cae-a03a-81045f930fc1
+		summarizeBy: sum
+		sourceColumn: Number of calculated columns
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of calculated measures'
+		dataType: int64
+		formatString: 0
+		lineageTag: c5c72aa3-fe08-4b66-b17e-d6fca968e8c8
+		summarizeBy: sum
+		sourceColumn: Number of calculated measures
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of calculated tables'
+		dataType: int64
+		formatString: 0
+		lineageTag: fb057744-6a8a-4c5e-9cf2-f5ef3e724db0
+		summarizeBy: sum
+		sourceColumn: Number of calculated tables
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Calculation'
+		dataType: int64
+		formatString: 0
+		lineageTag: 988de6be-84e5-4d55-a09f-3f7648eb8c5c
+		summarizeBy: sum
+		sourceColumn: Total Calculation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of pages'
+		dataType: int64
+		formatString: 0
+		lineageTag: 697a61a3-9ac4-4dc5-8d41-792839601c8d
+		summarizeBy: sum
+		sourceColumn: Number of pages
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of visualization'
+		dataType: int64
+		formatString: 0
+		lineageTag: 728f7b71-2cab-4d27-a7a3-91c5b742b61c
+		summarizeBy: sum
+		sourceColumn: Number of visualization
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Visual filters'
+		dataType: int64
+		formatString: 0
+		lineageTag: 87693173-3af1-4f87-8809-6a14c43401de
+		summarizeBy: sum
+		sourceColumn: Number of Visual filters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of page filters'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7473796c-9a3c-4106-9379-db83a1b58bb0
+		summarizeBy: sum
+		sourceColumn: Number of page filters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of report filters'
+		dataType: int64
+		formatString: 0
+		lineageTag: c5394868-7149-45c6-b83e-af88f0b33516
+		summarizeBy: sum
+		sourceColumn: Number of report filters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Filters'
+		dataType: int64
+		formatString: 0
+		lineageTag: 475bda00-cd38-44df-9e89-3a2dfe2be4bb
+		summarizeBy: sum
+		sourceColumn: Total Filters
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Overview = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Overview_Sheet = Source{[Item="Overview",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Overview_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"Report Path", type any}, {"Bookmarks", Int64.Type}, {"Total queries", Int64.Type}, {"Number of calculated columns", Int64.Type}, {"Number of calculated measures", Int64.Type}, {"Number of calculated tables", Int64.Type}, {"Total Calculation", Int64.Type}, {"Number of pages", Int64.Type}, {"Number of visualization", Int64.Type}, {"Number of Visual filters", Int64.Type}, {"Number of page filters", Int64.Type}, {"Number of report filters", Int64.Type}, {"Total Filters", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

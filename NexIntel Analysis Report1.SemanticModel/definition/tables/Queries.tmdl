@@ -1,0 +1,60 @@
+table Queries
+	lineageTag: a1b60412-b908-40d1-b253-bc248ae66474
+
+	column ReportName
+		dataType: string
+		lineageTag: 6f37dbb5-e272-4340-8361-647048c267e1
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 3b5bcd2e-af5f-49bd-a4e2-37609b40b383
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: fe59331b-7fc9-4b33-8ea5-3dddbd3e6c13
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Query Name'
+		dataType: string
+		lineageTag: a93f1d15-223c-4b4b-9f5f-0a995c27fdf0
+		summarizeBy: none
+		sourceColumn: Query Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is it Custom SQL or Table'
+		dataType: string
+		lineageTag: 37b887c4-e49e-4539-99de-95333b90d809
+		summarizeBy: none
+		sourceColumn: Is it Custom SQL or Table
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Queries = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Queries_Sheet = Source{[Item="Queries",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Queries_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Query Name", type text}, {"Is it Custom SQL or Table", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

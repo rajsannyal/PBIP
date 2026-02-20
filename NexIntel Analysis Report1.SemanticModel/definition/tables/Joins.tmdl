@@ -1,0 +1,68 @@
+table Joins
+	lineageTag: 68f92e0c-c3cb-45ea-9564-f1b6bedd0b80
+
+	column ReportName
+		dataType: string
+		lineageTag: e1358bdf-f371-48fe-9164-3f98459f1538
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: cdfca0f9-41fd-4300-ad14-b2108bf63d24
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: 87661c9a-c699-42db-890a-0cff0984fc2a
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Query1
+		dataType: string
+		lineageTag: 02d7d1b5-f4de-4f3b-88e1-4751a905c246
+		summarizeBy: none
+		sourceColumn: Query1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Query2
+		dataType: string
+		lineageTag: f3ddba35-7de2-412b-a98c-2a9ab6924c07
+		summarizeBy: none
+		sourceColumn: Query2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Join expression'
+		dataType: string
+		lineageTag: 726e0000-030c-4ab2-b42d-3fb1949d2456
+		summarizeBy: none
+		sourceColumn: Join expression
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Joins = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Joins_Sheet = Source{[Item="Joins",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Joins_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Query1", type text}, {"Query2", type text}, {"Join expression", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

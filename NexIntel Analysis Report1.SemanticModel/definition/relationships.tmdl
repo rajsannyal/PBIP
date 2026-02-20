@@ -1,0 +1,58 @@
+relationship AutoDetected_09e0b13f-2af4-4882-86b5-6ccbcb0d2315
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Calculated tables & Parameters'.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_0392abdd-becb-4ad3-9402-d4ba649bcab0
+	fromColumn: Calculations.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_245ba21c-6489-4522-b9e1-95a1b7a599c6
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Conditional Formatting'.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_96fe155d-b002-4ce5-b009-c5f70e7c124b
+	crossFilteringBehavior: bothDirections
+	fromColumn: Connections.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_e6e71b7c-01ec-4955-975f-495c3166fe96
+	fromColumn: 'Global & Page Filters'.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_f0e79c94-5dd9-4366-a115-3b87ae9db473
+	fromColumn: Joins.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_725fc014-84a3-4b28-8511-31c77dcf7ee1
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: Pages.reportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_065cd8cd-a1c2-4e4b-ae8e-894c4d4a41d0
+	isActive: false
+	fromColumn: Queries.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_9b0155de-b635-4569-a565-8d93e6218795
+	crossFilteringBehavior: bothDirections
+	fromColumn: Tables.ReportName
+	toColumn: Overview.ReportName
+
+relationship AutoDetected_d0e8ccb1-1dbd-4444-857d-1251599ad4e9
+	fromColumn: 'Visualization Filters'.ReportName
+	toColumn: Overview.ReportName
+
+relationship 0b4ef05b-e82e-d0bb-8256-019d37dba047
+	crossFilteringBehavior: bothDirections
+	fromColumn: Joins.ReportName
+	toColumn: Queries.'Query Name'
+
+relationship 6d5a8f15-7f32-2c57-a22a-7416d7aabc9a
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Calculations.ReportName
+	toColumn: Queries.ReportName
+

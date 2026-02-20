@@ -1,0 +1,100 @@
+table Connections
+	lineageTag: bd3e07bf-214e-4960-93d0-790909dbe378
+
+	column ReportName
+		dataType: string
+		lineageTag: 7dbdaa46-32d4-49ca-9040-f3cada1a5729
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: d69705ca-0b18-4653-bd3c-8af11d2efc16
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: ca66574d-651d-4f59-b684-78a7900f8a41
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Datasource Type'
+		dataType: string
+		lineageTag: 4f81fd7d-45c1-48d1-a317-9ddd8dc9a4d6
+		summarizeBy: none
+		sourceColumn: Datasource Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data source Server'
+		dataType: string
+		lineageTag: 8483170f-a3ba-4d4f-9005-f332e49306e6
+		summarizeBy: none
+		sourceColumn: Data source Server
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Database Instance'
+		dataType: string
+		lineageTag: ef98a3a6-ba24-481a-b271-fe9bb1a13cc8
+		summarizeBy: none
+		sourceColumn: Database Instance
+
+		annotation SummarizationSetBy = Automatic
+
+	column Schema
+		dataType: string
+		lineageTag: c598681e-a784-4dee-a791-80b5afbf6409
+		summarizeBy: none
+		sourceColumn: Schema
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Custom Query'
+		dataType: string
+		lineageTag: 32eb00a9-3002-43fa-b7c0-b372ac40bb94
+		summarizeBy: none
+		sourceColumn: Custom Query
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Datasource Name'
+		dataType: string
+		lineageTag: 3578411f-f657-4ec7-b234-2d2f8d87721e
+		summarizeBy: none
+		sourceColumn: Datasource Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Connection Type'
+		dataType: string
+		lineageTag: 2d9f4f8f-2499-4db2-9b15-2c9537f3433b
+		summarizeBy: none
+		sourceColumn: Connection Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Connections = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Connections_Sheet = Source{[Item="Connections",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Connections_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Datasource Type", type text}, {"Data source Server", type text}, {"Database Instance", type text}, {"Schema", type text}, {"Custom Query", type text}, {"Datasource Name", type text}, {"Connection Type", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

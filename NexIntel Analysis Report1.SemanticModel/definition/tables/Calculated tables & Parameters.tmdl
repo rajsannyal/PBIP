@@ -1,0 +1,68 @@
+table 'Calculated tables & Parameters'
+	lineageTag: 7b234f9f-a2a6-4b50-9361-f735398d3100
+
+	column ReportName
+		dataType: string
+		lineageTag: a93d9a3e-38eb-4204-bc89-155c9ca3696d
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 9d306dd4-89c1-44fe-86c0-48080611edd0
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: ce07a07a-74e6-4d79-9613-1adac8ff931f
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table Name'
+		dataType: string
+		lineageTag: 604823c3-1c2a-4757-8bb4-6314d2959d62
+		summarizeBy: none
+		sourceColumn: Table Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table expression'
+		dataType: string
+		lineageTag: 3746b47c-1f4a-486a-a962-93f64fa8dee3
+		summarizeBy: none
+		sourceColumn: Table expression
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table Columns'
+		dataType: string
+		lineageTag: 227937b8-397d-4034-a152-ec5d3613f46a
+		summarizeBy: none
+		sourceColumn: Table Columns
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Calculated tables & Parameters' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\LTIMPBI\report_everything_consolidated 3.xlsx"), null, true),
+				    #"Calculated tables & Parameters_Sheet" = Source{[Item="Calculated tables & Parameters",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Calculated tables & Parameters_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Table Name", type text}, {"Table expression", type text}, {"Table Columns", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

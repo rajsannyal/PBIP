@@ -1,0 +1,88 @@
+table 'Conditional Formatting'
+	lineageTag: c35fcad3-cad4-44f2-905c-58efb259f9f2
+
+	measure 'Total Tables' = DISTINCTCOUNT('Conditional Formatting'[Table used])
+		formatString: 0
+		lineageTag: 4fb90104-5c97-4c8e-9493-56c7eff8c298
+
+	measure Total_Pages = COUNT('Conditional Formatting'[Page Name])
+		formatString: 0
+		lineageTag: 9f5e4e1a-6a0b-4d5f-9467-527c1ea6cfc7
+
+	measure TotalColumns = COUNTROWS('Conditional Formatting')
+		formatString: 0
+		lineageTag: e49d02c0-4f8f-4a1e-8085-0478d25f49cf
+
+	column ReportName
+		dataType: string
+		lineageTag: 5fdc5a20-d3fa-4fe8-b532-3c5f9cd83614
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 81649f6c-2006-4c98-ade9-5fdd2616dfaa
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: 86206a7f-be86-401f-9b32-208704d2075a
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Page Name'
+		dataType: string
+		lineageTag: 382ec069-bc5a-4337-99b1-d42facb3c28d
+		summarizeBy: none
+		sourceColumn: Page Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table used'
+		dataType: string
+		lineageTag: dc3c99f7-8e38-425f-8317-d9de05879d47
+		summarizeBy: none
+		sourceColumn: Table used
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column used'
+		dataType: string
+		lineageTag: 7133671b-aba5-4915-ad34-f729c8a1b44e
+		summarizeBy: none
+		sourceColumn: Column used
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value used'
+		dataType: string
+		lineageTag: daf793a7-68b1-47fc-9cf3-0c8d020bd8dc
+		summarizeBy: none
+		sourceColumn: Value used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Conditional Formatting' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    #"Conditional Formatting_Sheet" = Source{[Item="Conditional Formatting",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Conditional Formatting_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Page Name", type text}, {"Table used", type text}, {"Column used", type text}, {"Value used", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

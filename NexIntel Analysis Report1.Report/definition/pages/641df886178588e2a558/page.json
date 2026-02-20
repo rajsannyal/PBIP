@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "641df886178588e2a558",
+  "displayName": "Calculations",
+  "displayOption": "FitToPage",
+  "height": 800,
+  "width": 1525,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#2C2E41'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "eac5e269857dc791c009",
+      "target": "e1a0b974743013e2310d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "eac5e269857dc791c009",
+      "target": "5dfa3e7999a79d26d648",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e1a0b974743013e2310d",
+      "target": "eac5e269857dc791c009",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e1a0b974743013e2310d",
+      "target": "5dfa3e7999a79d26d648",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5dfa3e7999a79d26d648",
+      "target": "eac5e269857dc791c009",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5dfa3e7999a79d26d648",
+      "target": "e1a0b974743013e2310d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d1063831d1243020dc82",
+      "target": "eac5e269857dc791c009",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d1063831d1243020dc82",
+      "target": "e1a0b974743013e2310d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d1063831d1243020dc82",
+      "target": "5dfa3e7999a79d26d648",
+      "type": "DataFilter"
+    },
+    {
+      "source": "228d68606d1ddd1b12a4",
+      "target": "eac5e269857dc791c009",
+      "type": "DataFilter"
+    },
+    {
+      "source": "228d68606d1ddd1b12a4",
+      "target": "e1a0b974743013e2310d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "228d68606d1ddd1b12a4",
+      "target": "5dfa3e7999a79d26d648",
+      "type": "DataFilter"
+    }
+  ]
+}

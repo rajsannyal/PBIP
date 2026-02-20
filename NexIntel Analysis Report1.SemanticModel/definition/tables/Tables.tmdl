@@ -1,0 +1,155 @@
+table Tables
+	lineageTag: 0f6241d5-eb0c-4201-b7bc-8872e3a59b22
+
+	measure 'Total Columns' = COUNTROWS(Tables)
+		formatString: 0
+		lineageTag: 62e46165-0268-4894-bba9-e0d54e392d10
+
+	measure 'Used Columns' = CALCULATE(COUNTROWS(Tables), Tables[Used / Not Used] = "Used")
+		formatString: 0
+		lineageTag: 6628ab42-2ff1-42a7-9f5f-95642a9bfa0c
+
+	measure 'UnUsed Columns' = CALCULATE(COUNTROWS(Tables), Tables[Used / Not Used] = "Not Used")
+		formatString: 0
+		lineageTag: 1ab63ebf-a179-45ab-986a-5d9a6c3be274
+
+	measure 'Percent UnUsed' = DIVIDE([Unused Columns], [Total Columns], 0)
+		lineageTag: c16eb9ae-ba5a-4794-8deb-349caeb9c37f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Percent Used' = DIVIDE([Used Columns], [Total Columns], 0)
+		lineageTag: 4cbfb83a-c13b-4e23-81e9-44444ee4a845
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EstimatedBenefit =
+			
+			SWITCH(
+			    TRUE(),
+			    [Percent UnUsed] < 0.30, "~10–20% reduction in model size and refresh time",
+			    [Percent UnUsed] >= 0.30 && [Percent UnUsed] <= 0.60, "~20–40% improvement in performance",
+			    [Percent UnUsed] > 0.60, "~40–70% reduction in model size, refresh time, and query latency",
+			    "Unknown"
+			)
+		lineageTag: 730a1850-e7ce-4477-9acd-05dd86e3bf31
+
+	measure ImpactCategory =
+			
+			
+			SWITCH(
+			
+			   TRUE(),
+			
+			   [Percent Used]> 0.60, "High",
+			
+			   [Percent Used] > 0.30, "Moderate",
+			
+			   "Low"
+			)
+		lineageTag: 893053d6-2244-446e-b80e-19d7b4bb6eb7
+
+	measure ImpactLevel = ```
+			
+			SWITCH(
+			    TRUE(),
+			    [Percent UnUsed] < 0.30, "Low",
+			     [Percent UnUsed]  >= 0.30 &&  [Percent UnUsed]  <=0.60, "Moderate",
+			     [Percent UnUsed]  >= 0.60, "High",
+			    "Unknown"
+			)
+			
+			```
+		lineageTag: 4f2dc198-adbd-4b9a-b621-0d0486339662
+
+	measure SuggestedAction = ```
+			
+			SWITCH(
+			    TRUE(),
+			    [Percent UnUsed] < 0.30, "Optional pruning",
+			    [Percent UnUsed] >= 0.30 && [Percent UnUsed] <= 0.60, "Recommended",
+			    [Percent UnUsed] > 0.60, "Strongly recommended",
+			    "Unknown"
+			)
+			
+			```
+		lineageTag: 28cb6ea1-1ec3-4d88-a3f6-45c3e42bd6fa
+
+	measure 'Percent_Unused column' = DIVIDE('Tables'[UnUsed Columns], 'Tables'[Total Columns], 0)
+		lineageTag: 2980b8cf-8819-4d0e-a572-a81aee9a2e7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ReportName
+		dataType: string
+		lineageTag: a69a71b7-f1f1-4a12-b8ab-0d7efc61440c
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: 988659a8-1ad3-4732-8846-a1b2fd01c73e
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: db0df721-ade5-4c81-ba44-aac145d2d8e2
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table Name'
+		dataType: string
+		lineageTag: 47402a78-0b51-4aa4-9a88-8305ff847230
+		summarizeBy: none
+		sourceColumn: Table Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column Name'
+		dataType: string
+		lineageTag: 0c069e1e-0a6d-4cb7-bb39-d145faed262f
+		summarizeBy: none
+		sourceColumn: Column Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Type'
+		dataType: string
+		lineageTag: b81043dd-3acb-4a88-b626-60a945a14289
+		summarizeBy: none
+		sourceColumn: Data Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Used / Not Used'
+		dataType: string
+		lineageTag: 4b5426cc-184c-478d-9d40-e124b2a39efd
+		summarizeBy: none
+		sourceColumn: Used / Not Used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tables = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    Tables_Sheet = Source{[Item="Tables",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Tables_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Table Name", type text}, {"Column Name", type text}, {"Data Type", type text}, {"Used / Not Used", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

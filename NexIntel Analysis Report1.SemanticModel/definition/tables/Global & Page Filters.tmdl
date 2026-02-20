@@ -1,0 +1,84 @@
+table 'Global & Page Filters'
+	lineageTag: 08e814bb-2db5-44a6-a89d-3f8efa818831
+
+	measure 'Distinct Tables Used' = DISTINCTCOUNT('Global & Page Filters'[table used])
+		formatString: 0
+		lineageTag: c748f2ff-6d09-4698-ae91-8fb320cb7fff
+
+	measure 'Total Filters' = COUNTROWS('Global & Page Filters')
+		formatString: 0
+		lineageTag: 44f0da7f-055a-4d00-bc18-30492d004eae
+
+	column ReportName
+		dataType: string
+		lineageTag: 086b7298-65c9-4144-a967-1e61337a98a6
+		summarizeBy: none
+		sourceColumn: ReportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SheetName
+		dataType: string
+		lineageTag: aef634ca-f4a4-4d3b-9801-de830b3efee7
+		summarizeBy: none
+		sourceColumn: SheetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reportName.1'
+		dataType: string
+		lineageTag: e7dcd2f8-2874-46ec-8b7d-ee68836e4dd9
+		summarizeBy: none
+		sourceColumn: reportName.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Filter type'
+		dataType: string
+		lineageTag: 8fdf5644-3977-408a-bcb4-6c742e2b77ae
+		summarizeBy: none
+		sourceColumn: Filter type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Applied on which pages'
+		dataType: string
+		lineageTag: 699dccc3-1920-463b-8032-058020f003dc
+		summarizeBy: none
+		sourceColumn: Applied on which pages
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'table used'
+		dataType: string
+		lineageTag: aa74f607-731b-49b0-8277-8e309a95bdf8
+		summarizeBy: none
+		sourceColumn: table used
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'column and value used'
+		dataType: string
+		lineageTag: 0b413e10-a114-4642-aa1c-5e17b8754ef3
+		summarizeBy: none
+		sourceColumn: column and value used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Global & Page Filters' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\10827469\OneDrive - LTIMindtree\Desktop\NexIntel\report_everything_consolidated 3 (1).xlsx"), null, true),
+				    #"Global & Page Filters_Sheet" = Source{[Item="Global & Page Filters",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Global & Page Filters_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReportName", type text}, {"SheetName", type text}, {"reportName", type text}, {"Filter type", type text}, {"Applied on which pages", type text}, {"table used", type text}, {"column and value used", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"reportName", "reportName.1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
