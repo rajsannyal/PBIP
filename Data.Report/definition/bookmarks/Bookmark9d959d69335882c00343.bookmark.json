@@ -1,0 +1,910 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "displayName": "Quality Info Off",
+  "name": "Bookmark9d959d69335882c00343",
+  "options": {
+    "targetVisualNames": [
+      "b9e8de307a7005379e96"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection6afb7cc2a3e9c5045114",
+    "sections": {
+      "ReportSection6afb7cc2a3e9c5045114": {
+        "filters": {
+          "byName": {
+            "Filter28d99e5344f8e19b02ef": {
+              "name": "Filter28d99e5344f8e19b02ef",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "VW_DQ_RESULT_SUMMARY"
+                    }
+                  },
+                  "Property": "RULE_CATEGORY"
+                }
+              },
+              "howCreated": 1
+            }
+          }
+        },
+        "visualContainers": {
+          "624b9006ae15e00286eb": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "70571361e5359c9e9ee1": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "1f378e1dce418104b071": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ba2810329d93d1390cab": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "96974856700600079ce0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ef0c5ea81db17684bcb2": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "fc8d779675041930e000": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4c9c2cd2b55702338eb5": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2045ce02306865bc0c05": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5338dbbd4d56bfc7f12d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "DQ_RUN_DATE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "DQ_RUN_DATE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "786d5bd781380e0b12a3": {
+            "filters": {
+              "byName": {
+                "Filter6bdb7aee59240586baec": {
+                  "name": "Filter6bdb7aee59240586baec",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Completeness Rate %"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "26aeda2f75558add6cc2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Integrity Rate %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bc654cd16b4b76f1ca6a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Value"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {}
+            }
+          },
+          "d9d1d521f0caae2255e4": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "ad73d9162c858077787c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "4b17ee8a79c2eddb0817": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "022f44763eaf61207b72": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fd14662c14084a288a8d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "PLATFORM_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "PLATFORM_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d48735cb52ab07072fb0": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "626fe5bfd28d20cd05e0": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "6f958eead62713abd6ba": {
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Completeness Rate %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "77a3d3905e93e28b53cd": {
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Accuracy Rate %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "839c0c71109ce629996e": {
+            "singleVisual": {
+              "visualType": "gauge",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Uniqueness Rate %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "8fc113cbeaf96823765d": {
+            "filters": {
+              "byName": {
+                "Filter7fdef728900ce5649e3f": {
+                  "name": "Filter7fdef728900ce5649e3f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "VW_DQ_RESULT_SUMMARY"
+                            }
+                          },
+                          "Property": "PASS_RECORD_COUNT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter13400dc206a63a357ce1": {
+                  "name": "Filter13400dc206a63a357ce1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "DQ Score"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter7cc8e80481af9b202813": {
+                  "name": "Filter7cc8e80481af9b202813",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Database Name"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "Filter127cfce02b4b0376a3b3",
+                  "type": "TopN",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "FAILED_RECORD_COUNT"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "24264f31198a23eae75b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Table Name"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "treemap",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "VW_DQ_RESULT_SUMMARY"
+                            }
+                          },
+                          "Property": "PASS_RECORD_COUNT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Group": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Table Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "803e519877d3366cfbb2": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "VW_DQ_RESULT_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "DQ_RUN_DATE"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "VW_DQ_RESULT_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "DQ_RUN_DATE"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "VW_DQ_RESULT_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "DQ_RUN_DATE"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "VW_DQ_RESULT_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "DQ_RUN_DATE"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Day"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b0a7e92b380b8bca0db0": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "452c9c4ff46268cfc2bd": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Total Records"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "ec4aea19b961b4fd22af": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Total Records Pass"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "e4265fefefb6634ae2a1": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "Total Failed Tables"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "c7c072de851c63ef43fa": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2c5cc1c1ddc685dce66c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "DQ Score"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "098854639042e45c7a6e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "DQ Target"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "778e6a55c8aef8c4efff",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "RAG Amber"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1ac43a9aa83cab9699dd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "RAG Green"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "Tachometer1474636471549",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "DQ Score"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "6bff4e2e8bd57583bf6a": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "b4408de82d0036b99b3b": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "433959f9e1924e0fe6fa": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "b9e8de307a7005379e96": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a0d9f554d95a4a55174f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "RULE_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "397ae633bbbbe5fc9bb3",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "v",
+                        "Entity": "VW_DQ_RESULT_SUMMARY",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "v"
+                                          }
+                                        },
+                                        "Property": "FAILED_RECORD_COUNT"
+                                      }
+                                    },
+                                    "Function": 0
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0L"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "VW_DQ_RESULT_SUMMARY"
+                            }
+                          },
+                          "Property": "FAILED_RECORD_COUNT"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "VW_DQ_RESULT_SUMMARY"
+                        }
+                      },
+                      "Property": "RULE_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "339eaffbcc2bcbeb44c8": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "e1354b0b400aa0059346": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "73f343bad48806015950": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b31f419497b17aac63da": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

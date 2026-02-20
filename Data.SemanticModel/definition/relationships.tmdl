@@ -1,0 +1,225 @@
+relationship 99c87e9d-a59b-4a23-bebf-1fc39c50cd13
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_USER_CONSUMPTION.EVENT_TIMESTAMP
+	toColumn: LocalDateTable_36142cae-1d8d-4859-9f07-6630c39d1702.Date
+
+relationship e8705efc-79ce-477e-991e-732b8a95eb3d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_USER_CONSUMPTION.INSERT_DATE
+	toColumn: LocalDateTable_8a8e2cc3-06dd-4976-8eb3-da19995a3fcf.Date
+
+relationship 5d8fe4ea-c647-4247-be6b-eb5cd652330f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_USER_CONSUMPTION.UPDATE_DATE
+	toColumn: LocalDateTable_af8c9bc3-11e3-4707-8474-cdc7cf8b854a.Date
+
+relationship dc3ccf07-9b5b-4741-a20a-0e8fb7b88fe7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_CREDIT_USAGE.START_TIME
+	toColumn: LocalDateTable_4458601d-e6dd-4848-bed7-1606ed0f8019.Date
+
+relationship 53136bb4-286e-481d-9425-10772b6259b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_CREDIT_USAGE.END_TIME
+	toColumn: LocalDateTable_2b2eb178-3faa-42a7-9237-64baeef882af.Date
+
+relationship e88cd242-e331-44d9-b4aa-92e6e6f7f251
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_CREDIT_USAGE.INSERT_DATE
+	toColumn: LocalDateTable_4fe3d058-53ea-4d09-a001-4353e87d2698.Date
+
+relationship 344a5495-c587-4760-9e05-cad6f5c2e5e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_CREDIT_USAGE.UPDATE_DATE
+	toColumn: LocalDateTable_9059362f-f809-4fbb-b9ee-7cf80c2c82cc.Date
+
+relationship 3f4e9a04-59c4-4331-a3a4-9058be48c0b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DATE_DIM.DATE
+	toColumn: LocalDateTable_735eaa69-8651-4e7d-9074-b52ddcb3b03c.Date
+
+relationship 1afd8a23-2ef6-4fe5-8df9-36dd8063cad9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_DETAIL.COMPONENT_START_TIME
+	toColumn: LocalDateTable_1955b658-acec-4a52-a428-016127202de5.Date
+
+relationship 58a550fd-0df2-4d8f-a215-05380bfb83d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_DETAIL.COMPONENT_END_TIME
+	toColumn: LocalDateTable_b9041546-7ed5-4738-821a-8b83dbc9df6b.Date
+
+relationship 862414fe-b594-4664-8c9e-7f37de759e07
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_DETAIL.INSERT_DATE
+	toColumn: LocalDateTable_74a9b3cf-25e7-4bd6-aaa0-504c1c088833.Date
+
+relationship 8aeb0890-5f95-46fb-abb1-3c997c4a77d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_DETAIL.UPDATE_DATE
+	toColumn: LocalDateTable_ef36230b-bc2a-4685-896d-e3bfded67aa1.Date
+
+relationship 24926eae-8eb9-41c5-9b6a-8d336d5c262d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_SUMMARY.JOB_START_TIME
+	toColumn: LocalDateTable_6864e3e3-b162-4fe6-9e72-b57eec523d06.Date
+
+relationship d30ddae2-5f73-41e3-812e-a1d4650f6dbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_SUMMARY.JOB_END_TIME
+	toColumn: LocalDateTable_c9167e12-0468-4747-85da-d9bffe92a70a.Date
+
+relationship f8a4ee3d-a81c-49c2-b257-17efc3fa019b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_SUMMARY.INSERT_DATE
+	toColumn: LocalDateTable_c91c785e-d352-49ad-b925-be58ad56349c.Date
+
+relationship dfa9f96b-6a90-4b7f-bc56-ef425142b8e1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_RUN_LOG_SUMMARY.UPDATE_DATE
+	toColumn: LocalDateTable_f28c47e2-e504-4847-b82b-7fb276a78a5c.Date
+
+relationship add7ee0c-cde4-4903-adb0-c9c2acb60a77
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_SCHEDULES.INSERT_DATE
+	toColumn: LocalDateTable_3c7c3e72-007f-471f-9915-574924d9b6b0.Date
+
+relationship bd237be3-ffa2-40c8-9e51-03922f94a8e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_SCHEDULES.UPDATE_DATE
+	toColumn: LocalDateTable_a547d140-ba44-4b5a-8d9c-6dd476f73482.Date
+
+relationship 7a2453a3-fe79-4a5d-b8e1-322fb8e62961
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.CREATED_ON
+	toColumn: LocalDateTable_d4649ec0-c616-445e-989f-354823686284.Date
+
+relationship deecb1e9-4e27-428b-bfcb-29e1ab9c8502
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.DELETED_ON
+	toColumn: LocalDateTable_622a5fa4-2a36-4041-b7a9-2b33483b31dd.Date
+
+relationship d3b3fefa-c121-4880-89ca-4cd21567e97a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.LAST_SUCCESS_LOGIN
+	toColumn: LocalDateTable_afb428ab-5f37-4984-ba36-1f45f4fa37be.Date
+
+relationship 72a14085-f13a-401c-a84c-b91e88bc2fa1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.EXPIRES_AT
+	toColumn: LocalDateTable_8145295a-0189-4ba8-ae2f-b3319248fc7b.Date
+
+relationship c3fa96af-690d-48e1-b24d-4b6170a6fadc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.LOCKED_UNTIL_TIME
+	toColumn: LocalDateTable_4523add6-530b-4599-86ea-668bb6b30abb.Date
+
+relationship 97f44e9e-6c4c-4b6c-918f-16dc32f7ae19
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.PASSWORD_LAST_SET_TIME
+	toColumn: LocalDateTable_3afa24fc-ff7e-4add-91a0-cb4ebf64edff.Date
+
+relationship 8f196154-98fc-41ca-9990-fede932653f4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.INSERT_DATE
+	toColumn: LocalDateTable_b20f9455-4684-4d29-9402-68be16922d4f.Date
+
+relationship 795d1be5-5317-468a-8e90-533e1da2fffb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: USERS.UPDATE_DATE
+	toColumn: LocalDateTable_a81b1ab1-90f2-4103-a5ef-5cea0028d283.Date
+
+relationship 9c264b9c-99eb-443d-ba1a-362434000e38
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_QUERY_HISTORY.START_TIME
+	toColumn: LocalDateTable_07ea5c35-32d6-410e-9cd0-11a76337ae04.Date
+
+relationship d335be0c-27cd-41f5-bc76-1548e939fbbd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_QUERY_HISTORY.END_TIME
+	toColumn: LocalDateTable_acc46605-5bf3-4662-a0bd-95645822c3e2.Date
+
+relationship 8ea6a96b-e268-4976-8443-71bbd177cba4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_QUERY_HISTORY.INSERT_DATE
+	toColumn: LocalDateTable_469be7e4-1667-433d-82cc-ad05d3a6d03f.Date
+
+relationship 8129beb7-dbb6-4274-b9b0-00196c3c347d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_QUERY_HISTORY.UPDATE_DATE
+	toColumn: LocalDateTable_b569a5d3-6e8d-41de-b56d-b503377cb4d5.Date
+
+relationship 8c2b6ec3-32d2-462d-bce6-90b2d52fe92c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: VW_DQ_RESULT_DETAIL.DQ_RUN_DATE
+	toColumn: LocalDateTable_383429a5-543e-454a-bfcd-f659f1bd6b5d.Date
+
+relationship d8b0011c-f288-4bc4-b781-1981a84bf14b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: VW_DQ_RESULT_DETAIL.INSERT_DATE
+	toColumn: LocalDateTable_190b05b0-df7b-467f-96e5-967c7de6d15d.Date
+
+relationship 3cc9648a-d56f-497b-9ed8-917d62d7a7ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: VW_DQ_RESULT_DETAIL.UPDATE_DATE
+	toColumn: LocalDateTable_47307934-509b-46b7-9a51-58aae3d632d6.Date
+
+relationship bdb0a4ae-2d85-4cf3-ad6e-bd7968657fb6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_CREDIT_USAGE.'Load Time'
+	toColumn: LocalDateTable_69852f8a-27ae-4a48-aaba-424e526dd62b.Date
+
+relationship c9b55312-d212-4774-9e96-db299ed20d29
+	joinOnDateBehavior: datePartOnly
+	fromColumn: VW_DQ_RESULT_SUMMARY.DQ_RUN_DATE
+	toColumn: LocalDateTable_896f6908-153c-43bc-b701-2bd5e298e9c1.Date
+
+relationship a968e4be-a3f0-4cec-82c3-5fe1aa12beb3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: VW_DQ_RESULT_SUMMARY.INSERT_DATE
+	toColumn: LocalDateTable_64360fcf-1253-45b9-a2c8-3616f100d902.Date
+
+relationship e2340503-72a3-4d4e-8908-b108827df22c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: VW_DQ_RESULT_SUMMARY.UPDATE_DATE
+	toColumn: LocalDateTable_275fd7c1-a1e7-482c-b7b7-10bea9526ab5.Date
+
+relationship b237dfd6-7793-41b8-bfd7-1ee69e138a78
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DQ_RULES.INSERT_DATE
+	toColumn: LocalDateTable_b8a48b0e-a640-46c7-9ff4-e266dc2bd920.Date
+
+relationship 7c3fc5cf-83fd-4b0a-a5fb-6d51c0d95fe8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DQ_RULES.UPDATE_DATE
+	toColumn: LocalDateTable_f5ac5ee7-ecf2-4a0b-9b3b-e55a4e6e6edd.Date
+
+relationship c70e0a0a-e13b-4668-96e6-bc90f1cf454e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_SCHEDULES.CREATED
+	toColumn: LocalDateTable_79c65656-84f6-4967-80f9-70a51afb32d3.Date
+
+relationship 16fab1af-43e6-4eb7-828c-f8040ea1c12f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_SCHEDULES.LASTALTERED
+	toColumn: LocalDateTable_db7b63aa-3fca-41de-a180-8e1220a0bb1c.Date
+
+relationship ca435560-fc05-41c2-b728-472fa2cfbaa6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: JOB_SCHEDULES.DELETED
+	toColumn: LocalDateTable_617743a8-19d2-4ce2-b702-b9d11dcad69a.Date
+
+relationship cdfc9c48-bf95-460b-9294-341ba9c74fac
+	toCardinality: many
+	fromColumn: CLOUD_QUERY_HISTORY.USER_NAME
+	toColumn: CLOUD_USER_CONSUMPTION.USER_NAME
+
+relationship ab241440-353f-4054-9ca1-5b70e5d81faa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLOUD_CREDIT_USAGE.START_DATE
+	toColumn: LocalDateTable_f0755eb0-86c7-4e9a-acba-d4ce8e11aa55.Date
+
+relationship 49dcd530-dd7c-4b75-91ee-4e78f3e81905
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Query.startTimestamp
+	toColumn: LocalDateTable_5e60167e-b02e-4d90-8872-6fb01f540819.Date
+

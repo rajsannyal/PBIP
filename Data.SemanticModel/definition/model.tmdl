@@ -1,0 +1,79 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 27-05-2024 06:06:14 PM.
+queryGroup 'Query Errors - 27-05-2024 06:06:14 PM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["CLOUD_USER_CONSUMPTION","CLOUD_CREDIT_USAGE","DATE_DIM","JOB_RUN_LOG_DETAIL","JOB_RUN_LOG_SUMMARY","JOB_SCHEDULES","USERS","CLOUD_QUERY_HISTORY","VW_DQ_RESULT_DETAIL","VW_DQ_RESULT_SUMMARY","DQ_RULES","Errors in JOB_RUN_LOG_SUMMARY","Query"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table CLOUD_USER_CONSUMPTION
+ref table DateTableTemplate_30897b41-0851-4faa-b0a6-0efc21e34020
+ref table LocalDateTable_36142cae-1d8d-4859-9f07-6630c39d1702
+ref table LocalDateTable_8a8e2cc3-06dd-4976-8eb3-da19995a3fcf
+ref table LocalDateTable_af8c9bc3-11e3-4707-8474-cdc7cf8b854a
+ref table CLOUD_CREDIT_USAGE
+ref table LocalDateTable_4458601d-e6dd-4848-bed7-1606ed0f8019
+ref table LocalDateTable_2b2eb178-3faa-42a7-9237-64baeef882af
+ref table LocalDateTable_4fe3d058-53ea-4d09-a001-4353e87d2698
+ref table LocalDateTable_9059362f-f809-4fbb-b9ee-7cf80c2c82cc
+ref table DATE_DIM
+ref table LocalDateTable_735eaa69-8651-4e7d-9074-b52ddcb3b03c
+ref table JOB_RUN_LOG_DETAIL
+ref table LocalDateTable_1955b658-acec-4a52-a428-016127202de5
+ref table LocalDateTable_b9041546-7ed5-4738-821a-8b83dbc9df6b
+ref table LocalDateTable_74a9b3cf-25e7-4bd6-aaa0-504c1c088833
+ref table LocalDateTable_ef36230b-bc2a-4685-896d-e3bfded67aa1
+ref table JOB_RUN_LOG_SUMMARY
+ref table LocalDateTable_6864e3e3-b162-4fe6-9e72-b57eec523d06
+ref table LocalDateTable_c9167e12-0468-4747-85da-d9bffe92a70a
+ref table LocalDateTable_c91c785e-d352-49ad-b925-be58ad56349c
+ref table LocalDateTable_f28c47e2-e504-4847-b82b-7fb276a78a5c
+ref table JOB_SCHEDULES
+ref table LocalDateTable_3c7c3e72-007f-471f-9915-574924d9b6b0
+ref table LocalDateTable_a547d140-ba44-4b5a-8d9c-6dd476f73482
+ref table USERS
+ref table LocalDateTable_d4649ec0-c616-445e-989f-354823686284
+ref table LocalDateTable_622a5fa4-2a36-4041-b7a9-2b33483b31dd
+ref table LocalDateTable_afb428ab-5f37-4984-ba36-1f45f4fa37be
+ref table LocalDateTable_8145295a-0189-4ba8-ae2f-b3319248fc7b
+ref table LocalDateTable_4523add6-530b-4599-86ea-668bb6b30abb
+ref table LocalDateTable_3afa24fc-ff7e-4add-91a0-cb4ebf64edff
+ref table LocalDateTable_b20f9455-4684-4d29-9402-68be16922d4f
+ref table LocalDateTable_a81b1ab1-90f2-4103-a5ef-5cea0028d283
+ref table CLOUD_QUERY_HISTORY
+ref table LocalDateTable_07ea5c35-32d6-410e-9cd0-11a76337ae04
+ref table LocalDateTable_acc46605-5bf3-4662-a0bd-95645822c3e2
+ref table LocalDateTable_469be7e4-1667-433d-82cc-ad05d3a6d03f
+ref table LocalDateTable_b569a5d3-6e8d-41de-b56d-b503377cb4d5
+ref table VW_DQ_RESULT_DETAIL
+ref table LocalDateTable_383429a5-543e-454a-bfcd-f659f1bd6b5d
+ref table LocalDateTable_190b05b0-df7b-467f-96e5-967c7de6d15d
+ref table LocalDateTable_47307934-509b-46b7-9a51-58aae3d632d6
+ref table LocalDateTable_69852f8a-27ae-4a48-aaba-424e526dd62b
+ref table VW_DQ_RESULT_SUMMARY
+ref table LocalDateTable_896f6908-153c-43bc-b701-2bd5e298e9c1
+ref table LocalDateTable_64360fcf-1253-45b9-a2c8-3616f100d902
+ref table LocalDateTable_275fd7c1-a1e7-482c-b7b7-10bea9526ab5
+ref table DQ_RULES
+ref table LocalDateTable_b8a48b0e-a640-46c7-9ff4-e266dc2bd920
+ref table LocalDateTable_f5ac5ee7-ecf2-4a0b-9b3b-e55a4e6e6edd
+ref table LocalDateTable_79c65656-84f6-4967-80f9-70a51afb32d3
+ref table LocalDateTable_db7b63aa-3fca-41de-a180-8e1220a0bb1c
+ref table LocalDateTable_617743a8-19d2-4ce2-b702-b9d11dcad69a
+ref table LocalDateTable_f0755eb0-86c7-4e9a-acba-d4ce8e11aa55
+ref table Query
+ref table LocalDateTable_5e60167e-b02e-4d90-8872-6fb01f540819
+
+ref cultureInfo en-US
+

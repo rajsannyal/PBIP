@@ -1,0 +1,132 @@
+table DQ_RULES
+	lineageTag: cd8e0599-7f12-4072-9e70-ee9cee93d93e
+
+	column RULE_ID
+		dataType: string
+		lineageTag: 45de303e-81d9-434b-b215-08b6102950ad
+		summarizeBy: none
+		sourceColumn: RULE_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLATFORM_NAME
+		dataType: string
+		lineageTag: c2d05997-b207-4d27-a9eb-9cde1176068e
+		summarizeBy: none
+		sourceColumn: PLATFORM_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_NAME
+		dataType: string
+		lineageTag: 62554d50-8efc-4827-9a22-db3229bce698
+		summarizeBy: none
+		sourceColumn: RULE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_TYPE
+		dataType: string
+		lineageTag: d7fad100-fbfa-4125-b142-7a051eb53370
+		summarizeBy: none
+		sourceColumn: RULE_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_CATEGORY
+		dataType: string
+		lineageTag: 2df30b07-ea3f-4ca0-9aa2-8b45b2528446
+		summarizeBy: none
+		sourceColumn: RULE_CATEGORY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERTED_BY
+		dataType: string
+		lineageTag: 79f46928-da54-45fb-8516-cbdf11bf1282
+		summarizeBy: none
+		sourceColumn: INSERTED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATED_BY
+		dataType: string
+		lineageTag: 4f2910f2-d695-40e2-a6ae-9f86367f0aaa
+		summarizeBy: none
+		sourceColumn: UPDATED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMENTS
+		dataType: string
+		lineageTag: d4726ccb-c848-4168-84b6-18b62501c814
+		summarizeBy: none
+		sourceColumn: COMMENTS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d5b047d7-a9a8-4248-b795-33926e35e7f0
+		summarizeBy: none
+		sourceColumn: INSERT_DATE
+
+		variation Variation
+			isDefault
+			relationship: b237dfd6-7793-41b8-bfd7-1ee69e138a78
+			defaultHierarchy: LocalDateTable_b8a48b0e-a640-46c7-9ff4-e266dc2bd920.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f8035a09-d659-4f18-b4ae-6b632bf60552
+		summarizeBy: none
+		sourceColumn: UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 7c3fc5cf-83fd-4b0a-a5fb-6d51c0d95fe8
+			defaultHierarchy: LocalDateTable_f5ac5ee7-ecf2-4a0b-9b3b-e55a4e6e6edd.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DQ_RULES = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("jujakkf-iq70734.snowflakecomputing.com","POWER_BI_WH"),
+				    DM_DB_Database = Source{[Name="DM_DB",Kind="Database"]}[Data],
+				    DATA_OBSERVABILITY_Schema = DM_DB_Database{[Name="DATA_OBSERVABILITY",Kind="Schema"]}[Data],
+				    DQ_RULES_Table = DATA_OBSERVABILITY_Schema{[Name="DQ_RULES",Kind="Table"]}[Data]
+				in
+				    DQ_RULES_Table
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

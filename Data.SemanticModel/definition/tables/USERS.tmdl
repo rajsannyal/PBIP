@@ -1,0 +1,371 @@
+table USERS
+	lineageTag: ae972286-3d95-44b0-a01f-9af8162d4f60
+
+	column USER_ROW_ID
+		dataType: string
+		lineageTag: 42172b98-21cb-4a11-8c84-bf14e909eb14
+		summarizeBy: none
+		sourceColumn: USER_ROW_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLATFORM_NAME
+		dataType: string
+		lineageTag: c9fab410-4517-4193-bc82-189dde65578e
+		summarizeBy: none
+		sourceColumn: PLATFORM_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column USER_NAME
+		dataType: string
+		lineageTag: ae487b61-363f-4333-8dec-c8f7bfdf9b06
+		summarizeBy: none
+		sourceColumn: USER_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_ON
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c0636395-498b-44f7-b695-0f26f5966b57
+		summarizeBy: none
+		sourceColumn: CREATED_ON
+
+		variation Variation
+			isDefault
+			relationship: 7a2453a3-fe79-4a5d-b8e1-322fb8e62961
+			defaultHierarchy: LocalDateTable_d4649ec0-c616-445e-989f-354823686284.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELETED_ON
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 702847a8-2afe-4699-940a-341ae92a0408
+		summarizeBy: none
+		sourceColumn: DELETED_ON
+
+		variation Variation
+			isDefault
+			relationship: deecb1e9-4e27-428b-bfcb-29e1ab9c8502
+			defaultHierarchy: LocalDateTable_622a5fa4-2a36-4041-b7a9-2b33483b31dd.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOGIN_NAME
+		dataType: string
+		lineageTag: 7d00af26-d6dd-472b-aded-e2c046be9b22
+		summarizeBy: none
+		sourceColumn: LOGIN_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISPLAY_NAME
+		dataType: string
+		lineageTag: cc506859-a79f-4b5f-a263-b8c49d57a2f8
+		summarizeBy: none
+		sourceColumn: DISPLAY_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIRST_NAME
+		dataType: string
+		lineageTag: 02935e0c-e575-46d7-9005-e20a772410de
+		summarizeBy: none
+		sourceColumn: FIRST_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_NAME
+		dataType: string
+		lineageTag: 2b3c1792-fffd-4ece-934b-1d7894f70147
+		summarizeBy: none
+		sourceColumn: LAST_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		lineageTag: d68834f9-361d-432c-87f3-b81a26808825
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUST_CHANGE_PASSWORD
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7b2b8bd9-0e2f-4b7e-a463-376db474a97d
+		summarizeBy: none
+		sourceColumn: MUST_CHANGE_PASSWORD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HAS_PASSWORD
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c28fd1de-8c05-498d-bcf7-fa734a9ddc0d
+		summarizeBy: none
+		sourceColumn: HAS_PASSWORD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMENT
+		dataType: string
+		lineageTag: 931a43ff-20ff-4cec-bffd-86b1c338da4e
+		summarizeBy: none
+		sourceColumn: COMMENT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISABLED
+		dataType: string
+		lineageTag: 484833d2-ad0b-4a39-a5c0-746eea5aaff0
+		summarizeBy: none
+		sourceColumn: DISABLED
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_LOCK
+		dataType: string
+		lineageTag: 1a527c4b-eaf5-4cea-bccd-d6539e678868
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_LOCK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEFAULT_WAREHOUSE
+		dataType: string
+		lineageTag: ce5c4ac1-c323-41c7-b1a7-55fa4ac9c730
+		summarizeBy: none
+		sourceColumn: DEFAULT_WAREHOUSE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEFAULT_NAMESPACE
+		dataType: string
+		lineageTag: 97d1b2a5-9e0a-45f3-8695-f04c8368ab38
+		summarizeBy: none
+		sourceColumn: DEFAULT_NAMESPACE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEFAULT_ROLE
+		dataType: string
+		lineageTag: 4674ab32-4c2c-4300-b8c9-2d0262aba057
+		summarizeBy: none
+		sourceColumn: DEFAULT_ROLE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_SUCCESS_LOGIN
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 195d52d9-b669-4ad2-a759-192934c61293
+		summarizeBy: none
+		sourceColumn: LAST_SUCCESS_LOGIN
+
+		variation Variation
+			isDefault
+			relationship: d3b3fefa-c121-4880-89ca-4cd21567e97a
+			defaultHierarchy: LocalDateTable_afb428ab-5f37-4984-ba36-1f45f4fa37be.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPIRES_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ba715879-c026-480d-bc49-dc1849c6293d
+		summarizeBy: none
+		sourceColumn: EXPIRES_AT
+
+		variation Variation
+			isDefault
+			relationship: 72a14085-f13a-401c-a84c-b91e88bc2fa1
+			defaultHierarchy: LocalDateTable_8145295a-0189-4ba8-ae2f-b3319248fc7b.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCKED_UNTIL_TIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e1d9c051-e4c0-47c5-96ec-00249420251f
+		summarizeBy: none
+		sourceColumn: LOCKED_UNTIL_TIME
+
+		variation Variation
+			isDefault
+			relationship: c3fa96af-690d-48e1-b24d-4b6170a6fadc
+			defaultHierarchy: LocalDateTable_4523add6-530b-4599-86ea-668bb6b30abb.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HAS_RSA_PUBLIC_KEY
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4db50eef-6d1c-4f86-8b03-132ea25367e1
+		summarizeBy: none
+		sourceColumn: HAS_RSA_PUBLIC_KEY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PASSWORD_LAST_SET_TIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f88a91a8-184d-4ec5-9b96-cd93d50f0c0c
+		summarizeBy: none
+		sourceColumn: PASSWORD_LAST_SET_TIME
+
+		variation Variation
+			isDefault
+			relationship: 97f44e9e-6c4c-4b6c-918f-16dc32f7ae19
+			defaultHierarchy: LocalDateTable_3afa24fc-ff7e-4add-91a0-cb4ebf64edff.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWNER
+		dataType: string
+		lineageTag: 90cbfeaa-cb6b-4109-b838-afd4a3d1088c
+		summarizeBy: none
+		sourceColumn: OWNER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEFAULT_SECONDARY_ROLE
+		dataType: string
+		lineageTag: d7c42f14-223b-4550-b393-9c6b90a70c4f
+		summarizeBy: none
+		sourceColumn: DEFAULT_SECONDARY_ROLE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERTED_BY
+		dataType: string
+		lineageTag: e3675910-18e2-4ac9-8bc8-a2bc63ece55e
+		summarizeBy: none
+		sourceColumn: INSERTED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATED_BY
+		dataType: string
+		lineageTag: 5a490a75-93ad-4d27-86eb-bf26e9fbfa71
+		summarizeBy: none
+		sourceColumn: UPDATED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMENTS
+		dataType: string
+		lineageTag: 11571eef-aa9f-4cd1-bbb7-ef98b875a8de
+		summarizeBy: none
+		sourceColumn: COMMENTS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b8451887-c0a4-4caa-99d7-898b5a150e3d
+		summarizeBy: none
+		sourceColumn: INSERT_DATE
+
+		variation Variation
+			isDefault
+			relationship: 8f196154-98fc-41ca-9990-fede932653f4
+			defaultHierarchy: LocalDateTable_b20f9455-4684-4d29-9402-68be16922d4f.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 695e93af-c0f6-40f7-9026-6c8fad6ef8a5
+		summarizeBy: none
+		sourceColumn: UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 795d1be5-5317-468a-8e90-533e1da2fffb
+			defaultHierarchy: LocalDateTable_a81b1ab1-90f2-4103-a5ef-5cea0028d283.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition USERS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("jujakkf-iq70734.snowflakecomputing.com","POWER_BI_WH"),
+				    DM_DB_Database = Source{[Name="DM_DB",Kind="Database"]}[Data],
+				    DATA_OBSERVABILITY_Schema = DM_DB_Database{[Name="DATA_OBSERVABILITY",Kind="Schema"]}[Data],
+				    USERS_Table = DATA_OBSERVABILITY_Schema{[Name="USERS",Kind="Table"]}[Data]
+				in
+				    USERS_Table
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

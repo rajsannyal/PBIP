@@ -1,0 +1,355 @@
+table CLOUD_CREDIT_USAGE
+	lineageTag: 6edfaae1-e774-4b8c-8746-f7b1c40c2120
+
+	measure 'Total Cost' = SUM(CLOUD_CREDIT_USAGE[COST])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 89067b30-3607-4e9f-99f5-2dc90406dee7
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost Last Month_M' = ```
+			
+			CALCULATE([Total Cost],
+			--Filter(ALL(JOB_RUN_LOG_SUMMARY), (JOB_RUN_LOG_SUMMARY[PLATFORM_NAME]) IN VALUES(JOB_RUN_LOG_SUMMARY[PLATFORM_NAME])),      
+			
+			DATEADD(CLOUD_CREDIT_USAGE[START_DATE].[Date],-1,MONTH)
+			    )
+			
+			
+			```
+		lineageTag: 5651e4a2-466b-4279-b5fc-8e1452671d8d
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost MOM Var' = ```
+			[Total Cost] - [Cost Last Month_M] 
+			```
+		lineageTag: bc5eac1f-3b7e-4d99-82b7-13393de2dd45
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost MOM Var %' = DIVIDE([Cost MOM Var],[Cost Last Month_M])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 296c5779-042a-4a59-8f5f-9cd218e12761
+
+		changedProperty = IsHidden
+
+	measure 'Total Credits Used' = SUM(CLOUD_CREDIT_USAGE[CREDITS_USED])
+		lineageTag: e2a89307-40da-4b3b-9c19-c460ae984302
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TOP 10 DAYS' = CALCULATE([Total Credits Used], TOPN(10,CLOUD_CREDIT_USAGE,CLOUD_CREDIT_USAGE[CREDITS_USED],DESC))
+		formatString: General Date
+		lineageTag: ad87bf66-14b1-43a9-ae3e-c8253b42ff8b
+
+		changedProperty = IsHidden
+
+	measure 'TOP RANKING ON DATE'
+		lineageTag: e6aad6a1-abd7-40c5-9565-bbf1887730a1
+
+		changedProperty = IsHidden
+
+	measure 'BOTTOM RANKING ON DATE' = RANKX(ALL(CLOUD_CREDIT_USAGE[START_DATE]),CLOUD_CREDIT_USAGE[Total Credits Used],,ASC,Dense)
+		formatString: 0
+		lineageTag: 02dd7de9-8f8f-4a14-905e-e2c11a63cf6d
+
+		changedProperty = IsHidden
+
+	measure 'Total Warehouse_Cloud_Credit_Usage' = DISTINCTCOUNTNOBLANK(CLOUD_CREDIT_USAGE[WAREHOUSE_NAME])
+		formatString: 0
+		lineageTag: 296a23fc-f91b-4874-8ef6-e7922e5a233b
+
+		changedProperty = IsHidden
+
+	measure 'Compute Cost' = sumx(CLOUD_CREDIT_USAGE,CLOUD_CREDIT_USAGE[CREDITS_USED_COMPUTE] * CLOUD_CREDIT_USAGE[COST_PER_CREDIT])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 893718a5-06b3-43de-a6e8-25046ace2f3e
+
+		changedProperty = IsHidden
+
+	measure 'Cloude Service cost' = sumx(CLOUD_CREDIT_USAGE,CLOUD_CREDIT_USAGE[COST_PER_CREDIT]*CLOUD_CREDIT_USAGE[CREDITS_USED_CLOUD_SERVICES])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 22fc9469-9f39-416d-a909-2c1f6f9c092f
+
+		changedProperty = IsHidden
+
+	measure 'Hide Matillion' = IF(SELECTEDVALUE(CLOUD_CREDIT_USAGE[PLATFORM_NAME]) = "MATILLION",1,0)
+		formatString: 0
+		lineageTag: 1dabed20-9a03-4247-9de8-4468a5ea0d22
+
+		changedProperty = IsHidden
+
+	column CLOUD_CREDIT_USAGE_ID
+		dataType: string
+		lineageTag: 6a6eee44-c9b6-4bd6-992a-5960cf7acdf7
+		summarizeBy: none
+		sourceColumn: CLOUD_CREDIT_USAGE_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLATFORM_NAME
+		dataType: string
+		lineageTag: b7942ad9-4574-466c-9e5b-e2bfca86a4f2
+		summarizeBy: none
+		sourceColumn: PLATFORM_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLATFORM_TYPE
+		dataType: string
+		lineageTag: bb6341e5-e1dd-46bd-a973-77dd58ef73e0
+		summarizeBy: none
+		sourceColumn: PLATFORM_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDIT_USAGE_TYPE
+		dataType: string
+		lineageTag: 54e63f23-308b-4db4-a5dc-8d4de399133d
+		summarizeBy: none
+		sourceColumn: CREDIT_USAGE_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column START_TIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9ce1b9ae-4faa-4204-885d-08c8cf087a03
+		summarizeBy: none
+		sourceColumn: START_TIME
+
+		variation Variation
+			isDefault
+			relationship: dc3ccf07-9b5b-4741-a20a-0e8fb7b88fe7
+			defaultHierarchy: LocalDateTable_4458601d-e6dd-4848-bed7-1606ed0f8019.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column END_TIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a88beec0-3a11-4919-baaf-83904a82dab0
+		summarizeBy: none
+		sourceColumn: END_TIME
+
+		variation Variation
+			isDefault
+			relationship: 53136bb4-286e-481d-9425-10772b6259b8
+			defaultHierarchy: LocalDateTable_2b2eb178-3faa-42a7-9237-64baeef882af.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITS_USED
+		dataType: double
+		lineageTag: f7d039a6-9118-4439-a9fe-024df8e20e72
+		summarizeBy: sum
+		sourceColumn: CREDITS_USED
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COST_PER_CREDIT
+		dataType: double
+		lineageTag: 0388cd0b-b491-4800-83d9-84a57e6f5792
+		summarizeBy: sum
+		sourceColumn: COST_PER_CREDIT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COST
+		dataType: double
+		lineageTag: 3b0f2208-5a15-45e0-b27d-73b18a95e7e5
+		summarizeBy: sum
+		sourceColumn: COST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WAREHOUSE_NAME
+		dataType: string
+		lineageTag: fac2e6ef-8e8e-420f-9121-4176348fd25c
+		summarizeBy: none
+		sourceColumn: WAREHOUSE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITS_USED_COMPUTE
+		dataType: double
+		lineageTag: f4e362b8-7cc5-4926-9a2b-c2c08a5a7601
+		summarizeBy: sum
+		sourceColumn: CREDITS_USED_COMPUTE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDITS_USED_CLOUD_SERVICES
+		dataType: double
+		lineageTag: 1f2bf054-8cf6-417c-b044-9cb633c9138a
+		summarizeBy: sum
+		sourceColumn: CREDITS_USED_CLOUD_SERVICES
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INSERTED_BY
+		dataType: string
+		lineageTag: 759a3f06-42b7-4399-a3b9-e9763cf5dff2
+		summarizeBy: none
+		sourceColumn: INSERTED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATED_BY
+		dataType: string
+		lineageTag: 27cfb695-0854-4afa-822a-be4197a41f61
+		summarizeBy: none
+		sourceColumn: UPDATED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMENTS
+		dataType: string
+		lineageTag: b40a5252-2e79-4ce0-905c-a135308efd45
+		summarizeBy: none
+		sourceColumn: COMMENTS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7a8d329d-c460-445b-851c-48e7bdc3e154
+		summarizeBy: none
+		sourceColumn: INSERT_DATE
+
+		variation Variation
+			isDefault
+			relationship: e88cd242-e331-44d9-b4aa-92e6e6f7f251
+			defaultHierarchy: LocalDateTable_4fe3d058-53ea-4d09-a001-4353e87d2698.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4c371e36-b0ba-4392-a1dc-fb5756c4ca8c
+		summarizeBy: none
+		sourceColumn: UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 344a5495-c587-4760-9e05-cad6f5c2e5e8
+			defaultHierarchy: LocalDateTable_9059362f-f809-4fbb-b9ee-7cf80c2c82cc.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Time' = DATEDIFF(CLOUD_CREDIT_USAGE[START_TIME],CLOUD_CREDIT_USAGE[END_TIME],SECOND)/60/60/24
+		dataType: dateTime
+		formatString: hh:nn:ss
+		lineageTag: 0173e720-5f88-4016-a24e-e8b3b7579f15
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: bdb0a4ae-2d85-4cf3-ad6e-bd7968657fb6
+			defaultHierarchy: LocalDateTable_69852f8a-27ae-4a48-aaba-424e526dd62b.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Average Load Time' = AVERAGE(CLOUD_CREDIT_USAGE[Load Time])
+		dataType: double
+		lineageTag: c1f09a16-3cd7-4975-aaba-0b97f4170530
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column START_DATE = CLOUD_CREDIT_USAGE[START_TIME].[Date]
+		formatString: Short Date
+		lineageTag: 0d9afabb-eca4-4998-b120-f9a0454da7a1
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: ab241440-353f-4054-9ca1-5b70e5d81faa
+			defaultHierarchy: LocalDateTable_f0755eb0-86c7-4e9a-acba-d4ce8e11aa55.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CLOUD_CREDIT_USAGE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("jujakkf-iq70734.snowflakecomputing.com","POWER_BI_WH"),
+				    DM_DB_Database = Source{[Name="DM_DB",Kind="Database"]}[Data],
+				    DATA_OBSERVABILITY_Schema = DM_DB_Database{[Name="DATA_OBSERVABILITY",Kind="Schema"]}[Data],
+				    CLOUD_CREDIT_USAGE_Table = DATA_OBSERVABILITY_Schema{[Name="CLOUD_CREDIT_USAGE",Kind="Table"]}[Data]
+				in
+				    CLOUD_CREDIT_USAGE_Table
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

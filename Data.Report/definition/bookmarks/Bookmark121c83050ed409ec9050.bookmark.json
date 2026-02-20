@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "displayName": "Observability_Completeness",
+  "name": "Bookmark121c83050ed409ec9050",
+  "options": {
+    "targetVisualNames": [
+      "020dde3cb1829cdd0d01"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection06b17a3eb8da5228601e",
+    "sections": {
+      "ReportSection06b17a3eb8da5228601e": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filter28d99e5344f8e19b02ef",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "VW_DQ_RESULT_SUMMARY"
+                    }
+                  },
+                  "Property": "RULE_CATEGORY"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

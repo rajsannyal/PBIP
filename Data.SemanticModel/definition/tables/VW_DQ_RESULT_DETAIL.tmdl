@@ -1,0 +1,1028 @@
+table VW_DQ_RESULT_DETAIL
+	lineageTag: 837fe50f-a90d-4d42-be97-ff0dafb20a4f
+
+	column DQ_RESULT_ID
+		dataType: string
+		lineageTag: 8d78a7fb-329c-4242-8e7c-3c69011519a1
+		summarizeBy: none
+		sourceColumn: DQ_RESULT_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLATFORM_NAME
+		dataType: string
+		lineageTag: 0e9913bd-8937-4ad9-85e1-955a0f02676a
+		summarizeBy: none
+		sourceColumn: PLATFORM_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DQ_RUN_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 74c341f7-ec9f-445b-a807-a8933462006b
+		summarizeBy: none
+		sourceColumn: DQ_RUN_DATE
+
+		variation Variation
+			isDefault
+			relationship: 8c2b6ec3-32d2-462d-bce6-90b2d52fe92c
+			defaultHierarchy: LocalDateTable_383429a5-543e-454a-bfcd-f659f1bd6b5d.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INPUT_FILE_NAME
+		dataType: string
+		lineageTag: 347e8791-71bd-4466-875e-211514d1cf2b
+		summarizeBy: none
+		sourceColumn: INPUT_FILE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATABASE_NAME
+		dataType: string
+		lineageTag: 06168996-4839-4334-b2fa-3b2c6d5fb4c1
+		summarizeBy: none
+		sourceColumn: DATABASE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCHEMA_NAME
+		dataType: string
+		lineageTag: f7e58a0e-08ed-49dc-a849-4709c6cc1855
+		summarizeBy: none
+		sourceColumn: SCHEMA_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TABLE_NAME
+		dataType: string
+		lineageTag: 338ca9a1-6a1d-4940-aef6-090c17dcac07
+		summarizeBy: none
+		sourceColumn: TABLE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRITICAL_DATA_ELEMENT_ID
+		dataType: string
+		lineageTag: fb87748e-4985-4423-b346-c1e7b07ea154
+		summarizeBy: none
+		sourceColumn: CRITICAL_DATA_ELEMENT_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_ID
+		dataType: string
+		lineageTag: 6cb62cc1-14a1-4f7d-a12d-1fabca4c1b54
+		summarizeBy: none
+		sourceColumn: RULE_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECORD_TYPE
+		dataType: string
+		lineageTag: 133b4571-ccdf-4262-9465-a93cc2044b79
+		summarizeBy: none
+		sourceColumn: RECORD_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_1
+		dataType: string
+		lineageTag: 037a2208-3feb-4df4-b6a6-766c94cfb212
+		summarizeBy: none
+		sourceColumn: COLUMN_1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_2
+		dataType: string
+		lineageTag: fb691e7b-5d2d-4d11-9a36-a19014c111e4
+		summarizeBy: none
+		sourceColumn: COLUMN_2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_3
+		dataType: string
+		lineageTag: 532ff26c-1225-4dbf-87c3-e48e6acd5ac9
+		summarizeBy: none
+		sourceColumn: COLUMN_3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_4
+		dataType: string
+		lineageTag: 6611d4c5-9ebc-4d86-82f2-9d327b3c6554
+		summarizeBy: none
+		sourceColumn: COLUMN_4
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_5
+		dataType: string
+		lineageTag: 763f1f7a-5cab-4d7c-b3c4-848ece35114e
+		summarizeBy: none
+		sourceColumn: COLUMN_5
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_6
+		dataType: string
+		lineageTag: c5689d8a-5973-4741-9287-ec2223f6ebeb
+		summarizeBy: none
+		sourceColumn: COLUMN_6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_7
+		dataType: string
+		lineageTag: f848c382-841a-469c-81ea-a9362049a569
+		summarizeBy: none
+		sourceColumn: COLUMN_7
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_8
+		dataType: string
+		lineageTag: b061b949-38ad-437c-af1d-24e649f6bcd2
+		summarizeBy: none
+		sourceColumn: COLUMN_8
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_9
+		dataType: string
+		lineageTag: 86bffdc6-41a8-45e5-afc4-0ffc4fc53273
+		summarizeBy: none
+		sourceColumn: COLUMN_9
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_10
+		dataType: string
+		lineageTag: c907f3e1-08c7-4af7-9de0-da50455aa2fa
+		summarizeBy: none
+		sourceColumn: COLUMN_10
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_11
+		dataType: string
+		lineageTag: cd5e259b-d39f-47f7-8beb-e1cbcad4694b
+		summarizeBy: none
+		sourceColumn: COLUMN_11
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_12
+		dataType: string
+		lineageTag: 486a99e8-2201-4f1d-96c9-fd665029d7e5
+		summarizeBy: none
+		sourceColumn: COLUMN_12
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_13
+		dataType: string
+		lineageTag: 5b1fc96e-41c4-403a-861b-bd546546c292
+		summarizeBy: none
+		sourceColumn: COLUMN_13
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_14
+		dataType: string
+		lineageTag: 85ecf589-339a-49b3-806a-82eff8cf65af
+		summarizeBy: none
+		sourceColumn: COLUMN_14
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_15
+		dataType: string
+		lineageTag: 4447c0a8-b472-4a35-854c-c48a961b63a2
+		summarizeBy: none
+		sourceColumn: COLUMN_15
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_16
+		dataType: string
+		lineageTag: 8f98c94c-4a95-4495-a005-6d04e7b9066d
+		summarizeBy: none
+		sourceColumn: COLUMN_16
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_17
+		dataType: string
+		lineageTag: 6b85f3d8-3796-4c3a-b8bc-2234a5e7ec83
+		summarizeBy: none
+		sourceColumn: COLUMN_17
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_18
+		dataType: string
+		lineageTag: 77bf7c23-8014-4606-a53a-5ff9c60f2a2d
+		summarizeBy: none
+		sourceColumn: COLUMN_18
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_19
+		dataType: string
+		lineageTag: 5660dd05-0ab8-4f89-92bc-568135eff2b0
+		summarizeBy: none
+		sourceColumn: COLUMN_19
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_20
+		dataType: string
+		lineageTag: 91a043f3-a4df-4223-9316-2908d593c0fd
+		summarizeBy: none
+		sourceColumn: COLUMN_20
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_21
+		dataType: string
+		lineageTag: 148ade3b-e0c2-4693-bc3b-7d0e2850bf97
+		summarizeBy: none
+		sourceColumn: COLUMN_21
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_22
+		dataType: string
+		lineageTag: 7b0b55a2-8f98-48de-8dd3-2310066e9051
+		summarizeBy: none
+		sourceColumn: COLUMN_22
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_23
+		dataType: string
+		lineageTag: 397e93c5-b491-4fa3-b2e7-007ffe2075ec
+		summarizeBy: none
+		sourceColumn: COLUMN_23
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_24
+		dataType: string
+		lineageTag: 96588eb2-c611-49be-9c33-5d14d1671ac7
+		summarizeBy: none
+		sourceColumn: COLUMN_24
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_25
+		dataType: string
+		lineageTag: 33b0be32-142c-4610-a068-d949bcbb0b94
+		summarizeBy: none
+		sourceColumn: COLUMN_25
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_26
+		dataType: string
+		lineageTag: f58e47f4-d536-4c29-8cb9-0e5d0826e6f3
+		summarizeBy: none
+		sourceColumn: COLUMN_26
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_27
+		dataType: string
+		lineageTag: 5dc8b91f-b25d-4c5c-9c7d-1d330413ea7a
+		summarizeBy: none
+		sourceColumn: COLUMN_27
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_28
+		dataType: string
+		lineageTag: 36a49c98-418f-4478-a446-f07eb6963e2b
+		summarizeBy: none
+		sourceColumn: COLUMN_28
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_29
+		dataType: string
+		lineageTag: 9ed7fa41-cbb4-4c50-adad-92c3bc590fd9
+		summarizeBy: none
+		sourceColumn: COLUMN_29
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_30
+		dataType: string
+		lineageTag: 776fb18e-eb99-40bc-baae-fa2e70af3227
+		summarizeBy: none
+		sourceColumn: COLUMN_30
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_31
+		dataType: string
+		lineageTag: a2cc7355-0929-4302-bbca-eae197ca8c1d
+		summarizeBy: none
+		sourceColumn: COLUMN_31
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_32
+		dataType: string
+		lineageTag: 4d7d96bc-8dfb-441f-86fa-cd834bf4523e
+		summarizeBy: none
+		sourceColumn: COLUMN_32
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_33
+		dataType: string
+		lineageTag: b2ce4e5d-a5d0-4ad9-a63d-da709b3979fb
+		summarizeBy: none
+		sourceColumn: COLUMN_33
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_34
+		dataType: string
+		lineageTag: d1b91df0-a6e6-436e-841d-4ca519e4b521
+		summarizeBy: none
+		sourceColumn: COLUMN_34
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_35
+		dataType: string
+		lineageTag: 31e677a2-3c28-440b-b7c2-05e674814a7d
+		summarizeBy: none
+		sourceColumn: COLUMN_35
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_36
+		dataType: string
+		lineageTag: 1aaa85ac-16f3-4ab0-8229-1a2ed2a133d9
+		summarizeBy: none
+		sourceColumn: COLUMN_36
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_37
+		dataType: string
+		lineageTag: aff45791-a1bf-449a-99cc-1d1a91440912
+		summarizeBy: none
+		sourceColumn: COLUMN_37
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_38
+		dataType: string
+		lineageTag: 2cab5bda-4f63-46b2-86fa-de3a3e420d1f
+		summarizeBy: none
+		sourceColumn: COLUMN_38
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_39
+		dataType: string
+		lineageTag: d38da5a2-4cfc-4244-bf27-e49c94ba9151
+		summarizeBy: none
+		sourceColumn: COLUMN_39
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_40
+		dataType: string
+		lineageTag: 96a96857-2edb-46ff-bc04-9ca1e5955c5e
+		summarizeBy: none
+		sourceColumn: COLUMN_40
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_41
+		dataType: string
+		lineageTag: 2100d016-14a5-424f-ad35-7236b8408c71
+		summarizeBy: none
+		sourceColumn: COLUMN_41
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_42
+		dataType: string
+		lineageTag: a18a50e6-f720-4488-b07e-041668b53f03
+		summarizeBy: none
+		sourceColumn: COLUMN_42
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_43
+		dataType: string
+		lineageTag: b2bea3ac-4ef4-4687-b59f-7e4105654d58
+		summarizeBy: none
+		sourceColumn: COLUMN_43
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_44
+		dataType: string
+		lineageTag: 1c2ba54f-9618-4ef5-b717-34fe56ef4985
+		summarizeBy: none
+		sourceColumn: COLUMN_44
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_45
+		dataType: string
+		lineageTag: f6163373-a658-4dc6-badb-558254599cda
+		summarizeBy: none
+		sourceColumn: COLUMN_45
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_46
+		dataType: string
+		lineageTag: b9cb0771-ec0c-4462-89cd-3e026bbecaeb
+		summarizeBy: none
+		sourceColumn: COLUMN_46
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_47
+		dataType: string
+		lineageTag: 2124ff5b-0f5e-4480-a2d2-b802cfc81152
+		summarizeBy: none
+		sourceColumn: COLUMN_47
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_48
+		dataType: string
+		lineageTag: d3345316-8291-4eef-9bee-32bcae1dd054
+		summarizeBy: none
+		sourceColumn: COLUMN_48
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_49
+		dataType: string
+		lineageTag: accd016c-fa35-46d9-9461-fda058ebc1a5
+		summarizeBy: none
+		sourceColumn: COLUMN_49
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_50
+		dataType: string
+		lineageTag: 33aaa076-4d9a-40ea-82b7-92c3f776521d
+		summarizeBy: none
+		sourceColumn: COLUMN_50
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_51
+		dataType: string
+		lineageTag: 0785174f-f65c-4272-843d-24e5858e5dd5
+		summarizeBy: none
+		sourceColumn: COLUMN_51
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_52
+		dataType: string
+		lineageTag: 9fcf2ed4-0bd2-466e-9099-6c3ffa7fb97a
+		summarizeBy: none
+		sourceColumn: COLUMN_52
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_53
+		dataType: string
+		lineageTag: e6da2b24-c5ba-4acc-b77c-b0f47ed3be4c
+		summarizeBy: none
+		sourceColumn: COLUMN_53
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_54
+		dataType: string
+		lineageTag: 570493b3-3f8c-40f6-9b24-c8ee1ff24e3b
+		summarizeBy: none
+		sourceColumn: COLUMN_54
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_55
+		dataType: string
+		lineageTag: 581c314c-d503-4741-b4ec-54b08f85bbf8
+		summarizeBy: none
+		sourceColumn: COLUMN_55
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_56
+		dataType: string
+		lineageTag: dd3d5abc-cdd6-42b9-873c-48a5afd1a72b
+		summarizeBy: none
+		sourceColumn: COLUMN_56
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_57
+		dataType: string
+		lineageTag: 91ddd40b-0c33-4a5f-855c-12097dc12e04
+		summarizeBy: none
+		sourceColumn: COLUMN_57
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_58
+		dataType: string
+		lineageTag: 667e9b2f-d171-4df9-9560-a3cfc171261b
+		summarizeBy: none
+		sourceColumn: COLUMN_58
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_59
+		dataType: string
+		lineageTag: 6c932cdc-cd9c-4d83-a45d-0755ca52a548
+		summarizeBy: none
+		sourceColumn: COLUMN_59
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_60
+		dataType: string
+		lineageTag: 0669cdc6-4eaf-4868-95f8-4ade5f163555
+		summarizeBy: none
+		sourceColumn: COLUMN_60
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_61
+		dataType: string
+		lineageTag: 69f4f205-aa0f-41ef-bfb2-214741eed80d
+		summarizeBy: none
+		sourceColumn: COLUMN_61
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_62
+		dataType: string
+		lineageTag: e2947575-8a22-4ba0-ba32-1310642ccd41
+		summarizeBy: none
+		sourceColumn: COLUMN_62
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_63
+		dataType: string
+		lineageTag: ee66b263-a604-48f6-ad61-524b210f17c3
+		summarizeBy: none
+		sourceColumn: COLUMN_63
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_64
+		dataType: string
+		lineageTag: 25390594-a86a-4f39-a447-53f8347c6bba
+		summarizeBy: none
+		sourceColumn: COLUMN_64
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_65
+		dataType: string
+		lineageTag: cf3055fe-907d-44c3-9b82-0467a5541fb0
+		summarizeBy: none
+		sourceColumn: COLUMN_65
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_66
+		dataType: string
+		lineageTag: 72e0e6b3-da41-4046-b0a6-7fcf7d88e660
+		summarizeBy: none
+		sourceColumn: COLUMN_66
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_67
+		dataType: string
+		lineageTag: 76efba6f-255b-4805-a785-03f923e5eba5
+		summarizeBy: none
+		sourceColumn: COLUMN_67
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_68
+		dataType: string
+		lineageTag: bfeff701-7f3f-421a-b3eb-c3d189f6bfe5
+		summarizeBy: none
+		sourceColumn: COLUMN_68
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_69
+		dataType: string
+		lineageTag: daff1129-bebb-49ed-9cff-19907ba389c2
+		summarizeBy: none
+		sourceColumn: COLUMN_69
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_70
+		dataType: string
+		lineageTag: 3e8545e7-a205-4a0e-b0ca-36a25ff30e83
+		summarizeBy: none
+		sourceColumn: COLUMN_70
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_71
+		dataType: string
+		lineageTag: 789fabcf-6efd-446e-9147-e780a9ae105e
+		summarizeBy: none
+		sourceColumn: COLUMN_71
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_72
+		dataType: string
+		lineageTag: 770caa2b-95c8-474d-a45a-df81ac029c09
+		summarizeBy: none
+		sourceColumn: COLUMN_72
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_73
+		dataType: string
+		lineageTag: 206ee722-3b2c-43a3-a7ed-87c85fc7d9cc
+		summarizeBy: none
+		sourceColumn: COLUMN_73
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_74
+		dataType: string
+		lineageTag: f416544c-9260-4395-bf50-829b2803ac17
+		summarizeBy: none
+		sourceColumn: COLUMN_74
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_75
+		dataType: string
+		lineageTag: 27c6604d-94fb-4ad2-a632-d13ade577eeb
+		summarizeBy: none
+		sourceColumn: COLUMN_75
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_76
+		dataType: string
+		lineageTag: 1c136a34-10ed-44ec-bc6f-8a9cd1a42966
+		summarizeBy: none
+		sourceColumn: COLUMN_76
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_77
+		dataType: string
+		lineageTag: 4767b6cd-77af-4e5b-b77c-3d9c5149aa58
+		summarizeBy: none
+		sourceColumn: COLUMN_77
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_78
+		dataType: string
+		lineageTag: b204ce6a-14d6-4961-978c-b0bdfc87daa5
+		summarizeBy: none
+		sourceColumn: COLUMN_78
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_79
+		dataType: string
+		lineageTag: 0d165349-73c4-495e-b9d7-919b72ad418a
+		summarizeBy: none
+		sourceColumn: COLUMN_79
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLUMN_80
+		dataType: string
+		lineageTag: 03b85bfd-5f68-428e-b510-fae26e669365
+		summarizeBy: none
+		sourceColumn: COLUMN_80
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_VALUES_COLUMN
+		dataType: string
+		lineageTag: 512ee998-1209-43c6-ae32-b76240cc2591
+		summarizeBy: none
+		sourceColumn: DATA_VALUES_COLUMN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERTED_BY
+		dataType: string
+		lineageTag: 8cd77fb5-2b92-480a-a8d4-4344257996f1
+		summarizeBy: none
+		sourceColumn: INSERTED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATED_BY
+		dataType: string
+		lineageTag: 2c9518e6-40ed-4ffa-a370-a804c8c72880
+		summarizeBy: none
+		sourceColumn: UPDATED_BY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMENTS
+		dataType: string
+		lineageTag: eea763bd-71f0-436e-8b9a-655d61c2c1ba
+		summarizeBy: none
+		sourceColumn: COMMENTS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSERT_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 757774cd-6f7c-46bf-9a6d-d2d4e30425fc
+		summarizeBy: none
+		sourceColumn: INSERT_DATE
+
+		variation Variation
+			isDefault
+			relationship: d8b0011c-f288-4bc4-b781-1981a84bf14b
+			defaultHierarchy: LocalDateTable_190b05b0-df7b-467f-96e5-967c7de6d15d.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7de9ecbb-56d9-4eec-a9a0-919605ca3484
+		summarizeBy: none
+		sourceColumn: UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 3cc9648a-d56f-497b-9ed8-917d62d7a7ed
+			defaultHierarchy: LocalDateTable_47307934-509b-46b7-9a51-58aae3d632d6.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_NAME
+		dataType: string
+		lineageTag: 28322ebf-145a-4c66-9bf1-a35818930a46
+		summarizeBy: none
+		sourceColumn: RULE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_TYPE
+		dataType: string
+		lineageTag: 43ee8c61-a064-4413-8239-b7670fe75108
+		summarizeBy: none
+		sourceColumn: RULE_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RULE_CATEGORY
+		dataType: string
+		lineageTag: 881a4c47-90b3-459e-bb5b-4e5072559c8b
+		summarizeBy: none
+		sourceColumn: RULE_CATEGORY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VW_DQ_RESULT_DETAIL = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("jujakkf-iq70734.snowflakecomputing.com","POWER_BI_WH"),
+				    DM_DB_Database = Source{[Name="DM_DB",Kind="Database"]}[Data],
+				    DATA_OBSERVABILITY_Schema = DM_DB_Database{[Name="DATA_OBSERVABILITY",Kind="Schema"]}[Data],
+				    VW_DQ_RESULT_DETAIL_View = DATA_OBSERVABILITY_Schema{[Name="VW_DQ_RESULT_DETAIL",Kind="View"]}[Data]
+				in
+				    VW_DQ_RESULT_DETAIL_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

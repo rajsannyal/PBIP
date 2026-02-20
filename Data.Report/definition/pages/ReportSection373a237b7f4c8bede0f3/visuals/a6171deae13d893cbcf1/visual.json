@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "a6171deae13d893cbcf1",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 220,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CLOUD_CREDIT_USAGE"
+                    }
+                  },
+                  "Property": "Cloude Service cost"
+                }
+              },
+              "queryRef": "CLOUD_CREDIT_USAGE.Cloude Service cost",
+              "nativeQueryRef": "Cloude Service cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CLOUD_CREDIT_USAGE"
+                    }
+                  },
+                  "Property": "Compute Cost"
+                }
+              },
+              "queryRef": "CLOUD_CREDIT_USAGE.Compute Cost",
+              "nativeQueryRef": "Compute Cost"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CLOUD_CREDIT_USAGE"
+                  }
+                },
+                "Property": "Cloude Service cost"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

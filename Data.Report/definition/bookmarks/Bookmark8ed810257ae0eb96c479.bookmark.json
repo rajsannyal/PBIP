@@ -1,0 +1,1472 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "displayName": "Pipeline Info On",
+  "name": "Bookmark8ed810257ae0eb96c479",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection666850e3adca188620dd",
+    "sections": {
+      "ReportSection666850e3adca188620dd": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filter3046d37b54dc3783e34a",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "JOB_RUN_LOG_SUMMARY"
+                    }
+                  },
+                  "Property": "JOB_STATUS"
+                }
+              },
+              "howCreated": 5
+            }
+          ]
+        },
+        "visualContainers": {
+          "ee758497f83e5653a797": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Success Jobs"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "4b0ad826868a73ae8c1e": {
+            "filters": {
+              "byName": {
+                "Filterbcf3cb6d8806696a017b": {
+                  "name": "Filterbcf3cb6d8806696a017b",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "j",
+                        "Entity": "JOB_RUN_LOG_SUMMARY",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "j"
+                                    }
+                                  },
+                                  "Property": "JOB_STATUS"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'SUCCESS'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'FAILED'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "3457e13d03cf5e52b992": {
+            "filters": {
+              "byName": {
+                "Filtere9fdf008779ffb479eef": {
+                  "name": "Filtere9fdf008779ffb479eef",
+                  "type": "TopN",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "subquery",
+                        "Expression": {
+                          "Subquery": {
+                            "Query": {
+                              "Version": 2,
+                              "From": [
+                                {
+                                  "Name": "j",
+                                  "Entity": "JOB_RUN_LOG_SUMMARY",
+                                  "Type": 0
+                                }
+                              ],
+                              "Select": [
+                                {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "j"
+                                      }
+                                    },
+                                    "Property": "JOB_NAME"
+                                  },
+                                  "Name": "field"
+                                }
+                              ],
+                              "OrderBy": [
+                                {
+                                  "Direction": 2,
+                                  "Expression": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "j"
+                                            }
+                                          },
+                                          "Property": "Load Time in Secs"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Top": 5
+                            }
+                          }
+                        },
+                        "Type": 2
+                      },
+                      {
+                        "Name": "j",
+                        "Entity": "JOB_RUN_LOG_SUMMARY",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "j"
+                                    }
+                                  },
+                                  "Property": "JOB_NAME"
+                                }
+                              }
+                            ],
+                            "Table": {
+                              "SourceRef": {
+                                "Source": "subquery"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                "Filtere9054961f5bd16a8f474": {
+                  "name": "Filtere9054961f5bd16a8f474",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "j",
+                        "Entity": "JOB_RUN_LOG_SUMMARY",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "j"
+                                    }
+                                  },
+                                  "Property": "JOB_STATUS"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'SUCCESS'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'FAILED'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "JOB_RUN_LOG_SUMMARY"
+                            }
+                          },
+                          "Property": "Load Time in Secs"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "5b6aa94d426576d8f25c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "7e06a23ad671ecfb372c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f52b290d1197c39f2038",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Success Rate %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cdad346ab42be8289453",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Failure Rate %"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Success Rate %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "e72411cff115f8079b4b": {
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Success Rate %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "f28ea70567d046f45b2f": {
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Failure Rate %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "186dfb3f5abd8682d925": {
+            "filters": {
+              "byName": {
+                "Filter087c550b956300003713": {
+                  "name": "Filter087c550b956300003713",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter2e9ecac4886f5150189f": {
+                  "name": "Filter2e9ecac4886f5150189f",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter1a5699f8f044f5a3bf9b": {
+                  "name": "Filter1a5699f8f044f5a3bf9b",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter27964020d79f0b3ba281": {
+                  "name": "Filter27964020d79f0b3ba281",
+                  "type": "TopN",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "643a47e483afd940ef0a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Failed Jobs"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3404587e4731f320f13d",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Day"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a8f68ef4f09450041a62": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "77fa830b68ab1e8e3a83": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "633e9adf580b32db688e": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "1335dc049a29cb088fd2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "04e67bca93f5d3cedaa4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Total Jobs"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Total Jobs"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "a3bb57118a0a79940385": {
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a8df294375897c9784ca": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a38f0349b414a3980042": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Failed Jobs"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "c4c8f03c77436af58dfe": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "36c9a28e277ad24910bd": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "4406bba53e9eb5ca3b9d": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "93ee4f47fe277719951a": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3fd298c68ed24bcc562d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "5af4ff095dd79879cd0f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f3b5b2d8d7fcbea213c9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "PLATFORM_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "709b4464d4ddbd0ee6bf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "JOB_RUN_LOG_SUMMARY"
+                            }
+                          },
+                          "Property": "JOB_ID"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "treemap",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "JOB_RUN_LOG_SUMMARY"
+                            }
+                          },
+                          "Property": "JOB_ID"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Group": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "PLATFORM_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "faf90ca256ebba6f5ee1": {
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "JOB_RUN_LOG_SUMMARY"
+                            }
+                          },
+                          "Property": "JOB_ID"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b20999ab147eb6023a49": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2028791bbba39a02bd71": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7214dcaaad3639dcebc5": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3e122ee864b732fb55eb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "77cf17bf26f4035982cd",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "JOB_RUN_LOG_SUMMARY"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "JOB_START_TIME"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f2c62afc3c09b2d75f8f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9afef3a9736ba4151cc6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "PLATFORM_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "PLATFORM_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "1d4bbd1b12b6fd4f922f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a1904bedee2d7eaabbfd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "531533de330449440960": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "60a0e844f30199267975": {
+            "filters": {
+              "byName": {
+                "Filter6793b1b0a0a94e73e0ce": {
+                  "name": "Filter6793b1b0a0a94e73e0ce",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "j",
+                        "Entity": "JOB_RUN_LOG_SUMMARY",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "j"
+                                    }
+                                  },
+                                  "Property": "JOB_STATUS"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'FAILED'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'SUCCESS'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Days Bucket"
+                    }
+                  }
+                },
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_STATUS"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "Days Bucket"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "340244a6ed7c563e5746": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2db80a0a3bb89b0e5ccd": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "301206bef501a84fad11": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "09542505e6282bf28e49": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "4513b2540c1bb99d54bc": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "1dd37de15992089b59e2": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "1db056c206100490acb0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "5e3faf376cdbb0b610cc": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e78e96a02943245252c9": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "ca300fd054ebdd2c2a10": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b486247742877cc8096a": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "874dc06d7968caa0ab00": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "8297d511b540c8a00b74": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "d4cb25cc3006c407a380": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "315bbe9f8086d96a8ad0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_START_TIME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "JOB_RUN_LOG_SUMMARY"
+                        }
+                      },
+                      "Property": "JOB_START_TIME"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
