@@ -88,6 +88,11 @@ table CLOUD_CREDIT_USAGE
 
 		changedProperty = IsHidden
 
+	measure _test = SUM(CLOUD_CREDIT_USAGE[COST])
+		lineageTag: f5d6ad48-b91d-46aa-813d-7ae88dcfe241
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column CLOUD_CREDIT_USAGE_ID
 		dataType: string
 		lineageTag: 6a6eee44-c9b6-4bd6-992a-5960cf7acdf7

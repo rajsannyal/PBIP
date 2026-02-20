@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "159b71d96f33d71376a8",
+  "position": {
+    "x": 14,
+    "y": 580,
+    "z": 44001,
+    "height": 197,
+    "width": 204,
+    "tabOrder": 44001
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CLOUD_CREDIT_USAGE"
+                        }
+                      },
+                      "Property": "Average Load Time"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CLOUD_CREDIT_USAGE.Average Load Time)",
+              "nativeQueryRef": "Sum of Average Load Time"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CLOUD_CREDIT_USAGE"
+                      }
+                    },
+                    "Property": "Average Load Time"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
